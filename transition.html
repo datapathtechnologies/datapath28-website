@@ -1,0 +1,64 @@
+<!-- ===== Transition Overlay ===== -->
+<div id="page-transition">
+    <div class="transition-content">
+        <img src="resources/images/dp_logo1.png"
+             alt="DataPath Logo">
+    </div>
+</div>
+
+<style>
+/* ===== Transition Overlay ===== */
+#page-transition {
+    position: fixed;
+    inset: 0;
+    background: white;
+    z-index: 99999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+/* Hidden state */
+#page-transition.hide {
+    opacity: 0;
+}
+
+/* ===== Center Content ===== */
+.transition-content {
+    text-align: center;
+    animation: zoomFade 0.5s ease;
+}
+
+/* BIGGER LOGO */
+.transition-content img {
+    width: 500px;
+    height: 500px;
+    object-fit: contain;
+    margin-bottom: 25px;
+}
+
+/* BIGGER BRAND TEXT */
+.transition-content h1 {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    letter-spacing: 1.5px;
+}
+
+/* Smooth zoom animation */
+@keyframes zoomFade {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+</style>

@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DataPathTechnologies - Learn Without Limits</title>
+
+<link rel="icon" type="image/png" sizes="32x32"
+      href="resources/images/dp_title_logo.png">
+
+<link rel="apple-touch-icon"
+      href="resources/images/dp_title_logo.png">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet">
+
+<link rel="stylesheet" href="resources/css/style.css">
+
+</head>
+<script>
+window.addEventListener("scroll", function(){
+
+	const navbar = document.querySelector(".header-bar");
+	const heroHeight = document.querySelector(".hero").offsetHeight;
+
+	if(window.scrollY > heroHeight - 100){
+	    navbar.style.position = "fixed";
+	    navbar.style.top = "0";
+	    navbar.style.opacity = "1";
+	}else{
+	    navbar.style.position = "absolute";
+	    navbar.style.opacity = "1";
+	}
+
+});
+</script>
+<body>
+
+<!-- Transition -->
+<div id="transition-container"></div>
+
+<!-- Header -->
+<div class="header-bar">
+
+    <!-- LOGO (always visible) -->
+    <a href="/" class="logo-wrapper">
+        <img src="resources/images/dp_logo1.png">
+
+        <div class="logo-text">
+            <div class="logo-main">DataPath</div>
+            <div class="logo-sub">Technologies</div>
+        </div>
+    </a>
+
+    <!-- NAVIGATION (hero only) -->
+    <ul class="nav-links hero-nav">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+</div>
+<section class="hero" id="hero-section">
+
+<div>
+<h1 class="display-3 fw-bold">
+Transform Your Ideas Into Intelligent <br>Digital Products
+</h1>
+
+<p class="lead">
+DataPath Technologies helps businesses build modern websites,<br>
+mobile apps, marketing platforms and AI-driven tools designed<br>
+for performance, scalability, and growth.
+</p>
+
+<div class="input-group search-box">
+<input type="text" class="form-control"
+placeholder="Search services, solutions, or technologies...">
+
+<button class="btn-explore">Explore</button>
+</div>
+
+</div>
+
+<div class="scroll-down" onclick="scrollToAbout()">
+<span></span>
+</div>
+
+</section>
+
+
+
+<section class="datapath-section" id="about-section">
+
+<div class="container text-center">
+
+<h2 class="dp-headline">
+Build Smart Digital Solutions for the Future <br>
+with <span>DataPath Technologies</span>.
+</h2>
+
+<p class="dp-subheadline">
+At DataPath Technologies, we help startups and businesses
+transform ideas into powerful digital products.
+Our expertise includes web development, mobile applications,
+digital marketing strategies, and AI-enabled solutions designed
+to improve efficiency, scalability, and business growth.
+</p>
+
+</div>
+
+<div class="container">
+			<div class="dp-stats-box">
+				<div class="row">
+
+					<div class="col-md-4 stat-item">
+						<div class="stat-wrapper">
+							<div class="icon-box">
+								<i class="bi bi-diagram-3-fill"></i>
+							</div>
+							<div class="text-box">
+								<h3>Digital Solutions</h3>
+								<p>Modern development for scalable digital platforms.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 stat-item">
+						<div class="stat-wrapper">
+							<div class="icon-box">
+								<i class="bi bi-people-fill"></i>
+							</div>
+							<div class="text-box">
+								<h3>Supporting Businesses</h3>
+								<p>Helping startups and companies <br>build their digital presence.</p>
+								<!-- <span class="Loading"> (Still counting<span class="dots"></span>) -->
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4 stat-item">
+						<div class="stat-wrapper">
+							<div class="icon-box">
+								<i class="bi bi-bar-chart-fill"></i>
+							</div>
+							<div class="text-box">
+								<h3>Scalable & Reliable</h3>
+								<p>Reliable solutions built for <br>performance and scale.</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+</section>
+
+<!-- ================= APP MODULES SECTION ================= -->
+
+	<section class="app-features-section">
+
+		<div class="container text-center">
+			<h2 class="app-title">
+				What’s waiting for you at <br><span>DataPath Technologies?</span>
+			</h2>
+
+			<p class="app-subtitle">Smart technology solutions designed to help businesses 
+			build <br>scalable digital systems and accelerate growth.</p>
+		</div>
+
+		<div class="features-wrapper">
+
+			<!-- Left Side Features -->
+			<div class="feature-card card-1">
+				<h5>Custom Web Development</h5>
+				<p>Build responsive, scalable websites using modern technologies.</p>
+			</div>
+
+			<div class="feature-card card-2">
+				<h5>Mobile App Development</h5>
+				<p>Custom mobile apps designed for performance and user experience.</p>
+			</div>
+
+			<div class="feature-card card-3">
+				<h5>Data Analytics</h5>
+				<p>Transform business data into insights that support decision-making.</p>
+			</div>
+
+			<!-- Center Visual -->
+			<div class="center-circle">
+				<h4>Smart Digital Solutions</h4>
+				<p>Scalable technology for <br>modern businesses.</p>
+			</div>
+
+			<!-- Right Side Features -->
+			<div class="feature-card card-4">
+				<h5>AI-Powered <br>Tools</h5>
+				<p>Integrate AI automation and intelligent features into digital systems.</p>
+			</div>
+
+			<div class="feature-card card-5">
+				<h5>Digital Marketing Solutions</h5>
+				<p>SEO, social media marketing, and data-driven growth strategies.</p>
+			</div>
+
+			<div class="feature-card card-6">
+				<h5>Secure & Reliable Systems</h5>
+				<p>Reliable, secure, and performance-focused digital infrastructure.</p>
+			</div>
+
+		</div>
+
+	</section>
+	
+<section class="section services-section" id="services">
+
+<div id="services-lottie"></div>
+
+<h2 class="services-headline">Our <span>Services</span></h2>
+
+<div class="services">
+
+<div class="service-card">
+
+<h3>Website Development</h3>
+
+<p>Modern responsive websites designed to grow your business online.</p>
+
+<div class="service-popup">
+<span>We</span> build fast, secure and scalable websites tailored to your business needs using modern technologies.
+</div>
+
+</div>
+
+<div class="service-card">
+
+<h3>Mobile App Development</h3>
+
+<p>Custom Android and iOS apps with powerful features and user friendly design.</p>
+
+<div class="service-popup">
+<span>We</span> develop high-performance mobile apps with smooth UI, secure backend and scalable architecture.
+</div>
+
+</div>
+
+<div class="service-card">
+
+<h3>Digital Marketing Solutions</h3>
+
+<p>Grow your audience through SEO, social media marketing and branding.</p>
+
+<div class="service-popup">
+<span>We</span> help your brand reach the right audience through smart SEO, targeted campaigns, and strategies that convert visitors into customers.
+</div>
+
+</div>
+
+<div class="service-card">
+
+<h3>Data Analytics Solutions</h3>
+
+<p>Business dashboards, performance analytics, and reporting tools.</p>
+
+<div class="service-popup">
+<span>We</span> help your brand reach the right audience through smart SEO, targeted campaigns, and strategies that convert visitors into customers.
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="process-section">
+
+<div class="container text-center">
+
+<h2 class="process-title">How We Build <span>Digital Solutions</span></h2>
+
+<p class="process-subtitle">
+Our structured approach ensures every project moves smoothly from idea to deployment.
+</p>
+
+<div class="process-roadmap">
+
+<div class="process-step">
+<div class="step-number">01</div>
+<div class="step-card">
+<i class="bi bi-search"></i>
+<h4>Discovery</h4>
+<p>Understand business goals and project requirements.</p>
+</div>
+</div>
+
+<div class="process-step">
+<div class="step-number">02</div>
+<div class="step-card">
+<i class="bi bi-lightbulb"></i>
+<h4>Strategy</h4>
+<p>Define technology stack and development roadmap.</p>
+</div>
+</div>
+
+<div class="process-step">
+<div class="step-number">03</div>
+<div class="step-card">
+<i class="bi bi-gear"></i>
+<h4>Development</h4>
+<p>Build scalable web platforms and mobile apps.</p>
+</div>
+</div>
+
+<div class="process-step">
+<div class="step-number">04</div>
+<div class="step-card">
+<i class="bi bi-shield-check"></i>
+<h4>Testing</h4>
+<p>Ensure performance, security, and reliability.</p>
+</div>
+</div>
+
+<div class="process-step">
+<div class="step-number">05</div>
+<div class="step-card">
+<i class="bi bi-rocket"></i>
+<h4>Launch</h4>
+<p>Deploy the solution and provide improvements.</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="cta" id="contact">
+
+<div class="cta-container">
+
+<div class="cta-content">
+
+<h2 class="cta-headline">
+Exploring Digital Solutions for Your <span>Business?</span>
+</h2>
+
+<p>
+DataPath Technologies develops modern web platforms,
+mobile apps, data analytics dashboards, and AI-enabled
+business solutions.
+</p>
+
+<a href="#" onclick="openContactForm(event)">Contact Us</a>
+
+</div>
+
+<div id="cta-lottie"></div>
+
+</div>
+
+
+
+<div id="formNotice" class="form-notice">
+
+<div class="notice-box">
+
+<span class="close-btn" onclick="closePopup()">&times;</span>
+
+<h3 class="popup-headline">You're almost there!</h3>
+
+<p>
+Our enquiry form has opened in a new tab. Fill it out and we'll get back to you shortly.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer class="footer-section">
+
+<div class="container">
+
+<div class="row gy-4">
+
+<div class="col-md-3">
+<h3 class="footer-logo">DataPath Technologies</h3>
+<ul class="footer-links">
+<li><a href="#">About Us</a></li>
+<li><a href="#">Our Mission</a></li>
+</ul>
+</div>
+
+
+<div class="col-md-3">
+<h5>For Business</h5>
+<ul class="footer-links">
+<li><a href="#" onclick="openContactForm(event)">Website Development</a></li>
+<li><a href="#" onclick="openContactForm(event)">Mobile App Development</a></li>
+<li><a href="#" onclick="openContactForm(event)">Digital Marketing Solutions</a></li>
+<li><a href="#" onclick="openContactForm(event)">Data Analytics Solutions</a></li>
+</ul>
+</div>
+
+
+<div class="col-md-3 footer-support">
+
+<h5>Support</h5>
+
+<ul class="footer-links">
+
+<li>
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact.datapathlearn@gmail.com"
+target="_blank">
+Help Center
+</a>
+</li>
+
+<li>
+<a href="#" onclick="openContactForm(event)">
+Contact Us
+</a>
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="col-md-3">
+
+<h5>Social Links</h5>
+
+<div class="social-icons">
+
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact.datapathlearn@gmail.com"
+target="_blank">
+<i class="bi bi-envelope"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/datapath-technologies"
+target="_blank">
+<i class="bi bi-linkedin"></i>
+</a>
+
+<a href="https://www.instagram.com/datapath.learn"
+target="_blank">
+<i class="bi bi-instagram"></i>
+</a>
+
+<a href="https://www.facebook.com/share/1DYRvbdQtK/"
+target="_blank">
+<i class="bi bi-facebook"></i>
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<hr class="footer-divider">
+
+<div class="footer-compact">
+
+© <span id="year"></span> DataPath Technologies.
+All rights reserved.
+
+</div>
+
+</footer>
+
+
+
+<script>
+
+/* Load Header */
+fetch("header.html")
+.then(res => res.text())
+.then(data => {
+document.getElementById("header-container").innerHTML = data;
+});
+
+
+/* Load Transition */
+fetch("transition.html")
+.then(res => res.text())
+.then(data => {
+document.getElementById("transition-container").innerHTML = data;
+});
+
+
+function scrollToAbout(){
+const section = document.getElementById("about-section");
+section.scrollIntoView({behavior:"smooth"});
+}
+
+function scrollToHero(){
+const hero = document.getElementById("hero-section");
+hero.scrollIntoView({behavior:"smooth"});
+}
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+window.addEventListener("scroll", function(){
+
+    const nav = document.querySelector(".hero-nav");
+    const heroHeight = document.querySelector(".hero").offsetHeight;
+
+    if(window.scrollY > heroHeight - 100){
+        nav.style.opacity = "0";
+        nav.style.pointerEvents = "none";
+    } else {
+        nav.style.opacity = "1";
+        nav.style.pointerEvents = "auto";
+    }
+
+});
+function openContactForm(event){
+
+event.preventDefault();
+
+/* open google form in new tab */
+
+window.open(
+"https://docs.google.com/forms/d/e/1FAIpQLScJDbhNarECFha2EdLFjy2cV15cMHkQMKR1I7huUTGO_TpKog/viewform?usp=publish-editor",
+"_blank"
+);
+
+/* show popup */
+
+const popup = document.getElementById("formNotice");
+
+if(popup){
+popup.style.display = "flex";
+}
+
+}
+
+function closePopup(){
+const popup = document.getElementById("formNotice");
+if(popup){
+popup.style.display = "none";
+}
+}
+
+/* ESC key close */
+
+document.addEventListener("keydown", function(event){
+if(event.key === "Escape"){
+closePopup();
+}
+});
+
+/* Load Transition */
+fetch("transition.html")
+.then(res => res.text())
+.then(data => {
+
+    document.getElementById("transition-container").innerHTML = data;
+
+    /* fade out after load */
+    setTimeout(() => {
+
+        const overlay = document.getElementById("page-transition");
+
+        if(overlay){
+            overlay.classList.add("hide");
+
+            setTimeout(() => {
+                overlay.style.display = "none";
+            },500);
+        }
+
+    },600);
+
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const servicesAnim = document.getElementById("services-lottie");
+
+    if (servicesAnim) {
+        lottie.loadAnimation({
+            container: servicesAnim,
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+            path: "resources/animations/services.json"
+        });
+    }
+
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const ctaAnim = document.getElementById("cta-lottie");
+
+    if (ctaAnim) {
+        lottie.loadAnimation({
+            container: ctaAnim,
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+            path: "resources/animations/contact.json"
+        });
+    }
+
+});
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+<script src="https://unpkg.com/@studio-freight/lenis@1.0.35/dist/lenis.min.js"></script>
+
+</body>
+</html>
