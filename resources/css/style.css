@@ -1438,12 +1438,19 @@ font-size: 25px;
 
 /* ===== HEADER ===== */
 
+@media (max-width: 768px){
+
+/* ===== HEADER ===== */
+
 .header-bar{
-flex-direction:column;
-height:auto;
-padding:8px 8px;
-gap:8px;
+display:flex;
+flex-direction:row;              /* FIX: prevent tall header */
+justify-content:space-between;
 align-items:center;
+
+height:auto;
+padding:6px 16px;                /* reduced height */
+gap:10px;
 
 /* transparent on hero */
 background:transparent;
@@ -1464,11 +1471,18 @@ box-shadow:0 2px 8px rgba(0,0,0,0.05);
 position:sticky;
 }
 
+/* LOGO SIZE CONTROL */
+
+.logo-wrapper img{
+height:36px;     /* reduces header height */
+width:auto;
+}
+
 /* navigation */
 
 .hero-nav{
 margin-left:0;
-gap:20px;
+gap:16px;
 }
 
 /* ===== HERO SECTION ===== */
@@ -1545,8 +1559,6 @@ grid-template-columns:1fr;
 gap:20px;
 }
 
-/* card layout */
-
 .service-card{
 width:100%;
 max-width:100%;
@@ -1616,14 +1628,10 @@ margin-left:0;
 text-align:center;
 }
 
-/* fix support alignment */
-
 .footer-support{
 padding-left:0;
 text-align:center;
 }
-
-/* make footer columns consistent */
 
 .footer-column{
 width:100%;
@@ -1650,5 +1658,3 @@ img{
 max-width:100%;
 height:auto;
 }
-
-
