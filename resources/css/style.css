@@ -1,651 +1,1595 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>DataPathTechnologies - Learn Without Limits</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" sizes="32x32"
-      href="resources/images/dp_title_logo.png">
+@charset "UTF-8";
+body {
+	font-family: 'Poppins', sans-serif;
+	overflow-x: hidden;
+}
 
-<link rel="apple-touch-icon"
-      href="resources/images/dp_title_logo.png">
+html {
+	scroll-behavior: smooth;
+}
+/* ===== AUTH BUTTONS FIXED ===== */
+.auth-buttons {
+	position: fixed;
+	top: 20px;
+	right: 30px;
+	display: flex;
+	gap: 12px;
+	z-index: 9999;
+}
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet">
+/* Common Button Style */
+.auth-buttons a {
+	padding: 8px 18px;
+	border-radius: 30px;
+	font-size: 14px;
+	font-weight: 600;
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
-      rel="stylesheet">
+/* Sign In (Outline Style) */
+.btn-signin {
+	border: 1px solid #e63946;
+	color: #e63946;
+	background: transparent;
+}
 
-<link rel="stylesheet" href="resources/css/style.css">
+.btn-signin:hover {
+	background: #e63946;
+	color: white;
+	box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+	transform: translateY(-2px);
+}
 
-</head>
-<script>
-window.addEventListener("scroll", function(){
+/* Sign Up (Filled Style) */
+.btn-signup {
+	background: #e63946;
+	color: white;
+	animation: bounceSubtle 2s infinite ease-in-out;
+}
 
-	const navbar = document.querySelector(".header-bar");
-	const heroHeight = document.querySelector(".hero").offsetHeight;
-
-	if(window.scrollY > heroHeight - 100){
-	    navbar.style.position = "fixed";
-	    navbar.style.top = "0";
-	    navbar.style.opacity = "1";
-	}else{
-	    navbar.style.position = "absolute";
-	    navbar.style.opacity = "1";
+/* ===== Bounce Animation ===== */
+@keyframes bounceSubtle 
+{ 
+	0%, 100%  
+	{
+		transform: translateY(0);
 	}
-
-});
-</script>
-<body>
-
-<!-- Transition -->
-<div id="transition-container"></div>
-
-<!-- Header -->
-<div class="header-bar">
-
-    <!-- LOGO (always visible) -->
-    <a href="#" onclick="scrollToHero(); return false;" class="logo-wrapper">
-        <img src="resources/images/dp_logo1.png">
-
-        <div class="logo-text">
-            <div class="logo-main">DataPath</div>
-            <div class="logo-sub">Technologies</div>
-        </div>
-    </a>
-
-    <!-- NAVIGATION (hero only) -->
-    <ul class="nav-links hero-nav">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-
-</div>
-<section class="hero" id="hero-section">
-
-<div>
-<h1 class="display-3 fw-bold">
-Transform Your Ideas Into Intelligent <br>Digital Products
-</h1>
-
-<p class="lead">
-DataPath Technologies helps businesses build modern websites,<br>
-mobile apps, marketing platforms and AI-driven tools designed<br>
-for performance, scalability, and growth.
-</p>
-
-<div class="input-group search-box">
-<input type="text" class="form-control"
-placeholder="Search services, solutions, or technologies...">
-
-<button class="btn-explore">Explore</button>
-</div>
-
-</div>
-
-<div class="scroll-down" onclick="scrollToAbout()">
-<span></span>
-</div>
-
-</section>
-
-
-
-<section class="datapath-section" id="about-section">
-
-<div class="container text-center">
-
-<h2 class="dp-headline">
-Build Smart Digital Solutions for the Future <br>
-with <span>DataPath Technologies</span>.
-</h2>
-
-<p class="dp-subheadline">
-At DataPath Technologies, we help startups and businesses
-transform ideas into powerful digital products.
-Our expertise includes web development, mobile applications,
-digital marketing strategies, and AI-enabled solutions designed
-to improve efficiency, scalability, and business growth.
-</p>
-
-</div>
-
-<div class="container">
-			<div class="dp-stats-box">
-				<div class="row">
-
-					<div class="col-md-4 stat-item">
-						<div class="stat-wrapper">
-							<div class="icon-box">
-								<i class="bi bi-diagram-3-fill"></i>
-							</div>
-							<div class="text-box">
-								<h3>Digital Solutions</h3>
-								<p>Modern development for scalable digital platforms.</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-4 stat-item">
-						<div class="stat-wrapper">
-							<div class="icon-box">
-								<i class="bi bi-people-fill"></i>
-							</div>
-							<div class="text-box">
-								<h3>Supporting Businesses</h3>
-								<p>Helping startups and companies <br>build their digital presence.</p>
-								<!-- <span class="Loading"> (Still counting<span class="dots"></span>) -->
-								</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-4 stat-item">
-						<div class="stat-wrapper">
-							<div class="icon-box">
-								<i class="bi bi-bar-chart-fill"></i>
-							</div>
-							<div class="text-box">
-								<h3>Scalable & Reliable</h3>
-								<p>Reliable solutions built for <br>performance and scale.</p>
-							</div>
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
-</section>
-
-<!-- ================= APP MODULES SECTION ================= -->
-
-	<section class="app-features-section">
-
-		<div class="container text-center">
-			<h2 class="app-title">
-				What’s waiting for you at <br><span>DataPath Technologies?</span>
-			</h2>
-
-			<p class="app-subtitle">Smart technology solutions designed to help businesses 
-			build <br>scalable digital systems and accelerate growth.</p>
-		</div>
-
-		<div class="features-wrapper">
-
-			<!-- Left Side Features -->
-			<div class="feature-card card-1">
-				<h5>Custom Web Development</h5>
-				<p>Build responsive, scalable websites using modern technologies.</p>
-			</div>
-
-			<div class="feature-card card-2">
-				<h5>Mobile App Development</h5>
-				<p>Custom mobile apps designed for performance and user experience.</p>
-			</div>
-
-			<div class="feature-card card-3">
-				<h5>Data Analytics</h5>
-				<p>Transform business data into insights that support decision-making.</p>
-			</div>
-
-			<!-- Center Visual -->
-			<div class="center-circle">
-				<h4>Smart Digital Solutions</h4>
-				<p>Scalable technology for <br>modern businesses.</p>
-			</div>
-
-			<!-- Right Side Features -->
-			<div class="feature-card card-4">
-				<h5>AI-Powered <br>Tools</h5>
-				<p>Integrate AI automation and intelligent features into digital systems.</p>
-			</div>
-
-			<div class="feature-card card-5">
-				<h5>Digital Marketing Solutions</h5>
-				<p>SEO, social media marketing, and data-driven growth strategies.</p>
-			</div>
-
-			<div class="feature-card card-6">
-				<h5>Secure & Reliable Systems</h5>
-				<p>Reliable, secure, and performance-focused digital infrastructure.</p>
-			</div>
-
-		</div>
-
-	</section>
-	
-<section class="section services-section" id="services">
-
-<div id="services-lottie"></div>
-
-<h2 class="services-headline">Our <span>Services</span></h2>
-
-<div class="services">
-
-<div class="service-card">
-
-<h3>Website Development</h3>
-
-<p>Modern responsive websites designed to grow your business online.</p>
-
-<div class="service-popup">
-<span>We</span> build fast, secure and scalable websites tailored to your business needs using modern technologies.
-</div>
-
-</div>
-
-<div class="service-card">
-
-<h3>Mobile App Development</h3>
-
-<p>Custom Android and iOS apps with powerful features and user friendly design.</p>
-
-<div class="service-popup">
-<span>We</span> develop high-performance mobile apps with smooth UI, secure backend and scalable architecture.
-</div>
-
-</div>
-
-<div class="service-card">
-
-<h3>Digital Marketing Solutions</h3>
-
-<p>Grow your audience through SEO, social media marketing and branding.</p>
-
-<div class="service-popup">
-<span>We</span> help your brand reach the right audience through smart SEO, targeted campaigns, and strategies that convert visitors into customers.
-</div>
-
-</div>
-
-<div class="service-card">
-
-<h3>Data Analytics Solutions</h3>
-
-<p>Business dashboards, performance analytics, and reporting tools.</p>
-
-<div class="service-popup">
-<span>We</span> help your brand reach the right audience through smart SEO, targeted campaigns, and strategies that convert visitors into customers.
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<section class="process-section">
-
-<div class="container text-center">
-
-<h2 class="process-title">How We Build <span>Digital Solutions</span></h2>
-
-<p class="process-subtitle">
-Our structured approach ensures every project moves smoothly from idea to deployment.
-</p>
-
-<div class="process-roadmap">
-
-<div class="process-step">
-<div class="step-number">01</div>
-<div class="step-card">
-<i class="bi bi-search"></i>
-<h4>Discovery</h4>
-<p>Understand business goals and project requirements.</p>
-</div>
-</div>
-
-<div class="process-step">
-<div class="step-number">02</div>
-<div class="step-card">
-<i class="bi bi-lightbulb"></i>
-<h4>Strategy</h4>
-<p>Define technology stack and development roadmap.</p>
-</div>
-</div>
-
-<div class="process-step">
-<div class="step-number">03</div>
-<div class="step-card">
-<i class="bi bi-gear"></i>
-<h4>Development</h4>
-<p>Build scalable web platforms and mobile apps.</p>
-</div>
-</div>
-
-<div class="process-step">
-<div class="step-number">04</div>
-<div class="step-card">
-<i class="bi bi-shield-check"></i>
-<h4>Testing</h4>
-<p>Ensure performance, security, and reliability.</p>
-</div>
-</div>
-
-<div class="process-step">
-<div class="step-number">05</div>
-<div class="step-card">
-<i class="bi bi-rocket"></i>
-<h4>Launch</h4>
-<p>Deploy the solution and provide improvements.</p>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<section class="cta" id="contact">
-
-<div class="cta-container">
-
-<div class="cta-content">
-
-<h2 class="cta-headline">
-Exploring Digital Solutions for Your <span>Business?</span>
-</h2>
-
-<p>
-DataPath Technologies develops modern web platforms,
-mobile apps, data analytics dashboards, and AI-enabled
-business solutions.
-</p>
-
-<a href="#" onclick="openContactForm(event)">Contact Us</a>
-
-</div>
-
-<div id="cta-lottie"></div>
-
-</div>
-
-
-
-<div id="formNotice" class="form-notice">
-
-<div class="notice-box">
-
-<span class="close-btn" onclick="closePopup()">&times;</span>
-
-<h3 class="popup-headline">You're almost there!</h3>
-
-<p>
-Our enquiry form has opened in a new tab. Fill it out and we'll get back to you shortly.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<footer class="footer-section">
-
-<div class="container">
-
-<div class="row gy-4">
-
-<div class="col-md-3">
-<h3 class="footer-logo">DataPath Technologies</h3>
-<ul class="footer-links">
-<li><a href="#">About Us</a></li>
-<li><a href="#">Our Mission</a></li>
-</ul>
-</div>
-
-
-<div class="col-md-3">
-<h5>For Business</h5>
-<ul class="footer-links">
-<li><a href="#" onclick="openContactForm(event)">Website Development</a></li>
-<li><a href="#" onclick="openContactForm(event)">Mobile App Development</a></li>
-<li><a href="#" onclick="openContactForm(event)">Digital Marketing Solutions</a></li>
-<li><a href="#" onclick="openContactForm(event)">Data Analytics Solutions</a></li>
-</ul>
-</div>
-
-
-<div class="col-md-3 footer-support">
-
-<h5>Support</h5>
-
-<ul class="footer-links">
-
-<li>
-<a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact.datapathlearn@gmail.com"
-target="_blank">
-Help Center
-</a>
-</li>
-
-<li>
-<a href="#" onclick="openContactForm(event)">
-Contact Us
-</a>
-</li>
-
-</ul>
-
-</div>
-
-
-
-<div class="col-md-3">
-
-<h5>Social Links</h5>
-
-<div class="social-icons">
-
-<a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact.datapathlearn@gmail.com"
-target="_blank">
-<i class="bi bi-envelope"></i>
-</a>
-
-<a href="https://www.linkedin.com/in/datapath-technologies"
-target="_blank">
-<i class="bi bi-linkedin"></i>
-</a>
-
-<a href="https://www.instagram.com/datapath.learn"
-target="_blank">
-<i class="bi bi-instagram"></i>
-</a>
-
-<a href="https://www.facebook.com/share/1DYRvbdQtK/"
-target="_blank">
-<i class="bi bi-facebook"></i>
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<hr class="footer-divider">
-
-<div class="footer-compact">
-
-© <span id="year"></span> DataPath Technologies.
-All rights reserved.
-
-</div>
-
-</footer>
-
-
-
-<script>
-
-/* Load Header */
-fetch("header.html")
-.then(res => res.text())
-.then(data => {
-document.getElementById("header-container").innerHTML = data;
-});
-
-
-/* Load Transition */
-fetch("transition.html")
-.then(res => res.text())
-.then(data => {
-document.getElementById("transition-container").innerHTML = data;
-});
-
-
-function scrollToAbout(){
-const section = document.getElementById("about-section");
-section.scrollIntoView({behavior:"smooth"});
+	50%
+	{
+		transform:translateY(-6px);
+	}
+}
+.btn-signup:hover {
+	background: #c72c3c;
+	box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
+	transform: translateY(-2px);
+}
+.header-bar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:80px;
+display:flex;
+align-items:center;
+padding:0 20px;
+z-index:1000;
 }
 
-function scrollToHero(){
-const hero = document.getElementById("hero-section");
-hero.scrollIntoView({behavior:"smooth"});
+
+.logo-wrapper{
+display:flex;
+align-items:center;
+gap:10px;
+text-decoration:none;
 }
 
-document.getElementById("year").textContent = new Date().getFullYear();
+.logo-wrapper img{
+width:55px;
+}
 
-window.addEventListener("scroll", function(){
+.logo-text{
+display:flex;
+flex-direction:column;
+line-height:1;
+}
 
-    const nav = document.querySelector(".hero-nav");
-    const heroHeight = document.querySelector(".hero").offsetHeight;
+.logo-main{
+font-size:24px;
+font-weight:700;
+color:#e63946;
+margin:0;
+}
 
-    if(window.scrollY > heroHeight - 100){
-        nav.style.opacity = "0";
-        nav.style.pointerEvents = "none";
-    } else {
-        nav.style.opacity = "1";
-        nav.style.pointerEvents = "auto";
-    }
+.logo-sub{
+font-size:22px;
+font-weight:700;
+color:#e63946;
+margin:0;
+}
 
-});
-function openContactForm(event){
+.hero-nav{
+margin-left:auto;
+display:flex;
+gap:35px;
+transition:opacity 0.3s ease;
+}
+/* Navigation */
 
-event.preventDefault();
+.nav-links{
+display:flex;
+gap:35px;
+list-style:none;
+margin-left:auto;
+padding:0;
+}
 
-/* open google form in new tab */
+.nav-links a{
+text-decoration:none;
+color:white;
+font-weight:500;
+font-size:16px;
+transition:0.3s;
+}
 
-window.open(
-"https://docs.google.com/forms/d/e/1FAIpQLScJDbhNarECFha2EdLFjy2cV15cMHkQMKR1I7huUTGO_TpKog/viewform?usp=publish-editor",
-"_blank"
+.nav-links a:hover{
+color:#e63946;
+}
+
+/* Logo */
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+color:white;
+font-weight:600;
+font-size:18px;
+}
+
+/* ================= HERO ================= */
+.hero {
+	height: 100vh;
+	background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+		url("../images/hero_bg.jpeg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	animation: zoomBg 10s infinite alternate;
+}
+
+
+.hero h1{
+font-size:48px;
+font-weight:700;
+
+background: linear-gradient(
+90deg,
+#ffffff,
+#ff6b6b,
+#e63946,
+#c77dff,
+#ff6b6b,
+#ffffff
 );
 
-/* show popup */
+background-size:300%;
 
-const popup = document.getElementById("formNotice");
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+background-clip:text;
 
-if(popup){
-popup.style.display = "flex";
+animation: gradientMove 6s linear infinite;
 }
 
+@keyframes gradientMove{
+0%{background-position:0%;}
+100%{background-position:300%;}
 }
 
-function closePopup(){
-const popup = document.getElementById("formNotice");
-if(popup){
-popup.style.display = "none";
-}
+.hero p{
+    font-size: 18px;
 }
 
-/* ESC key close */
-
-document.addEventListener("keydown", function(event){
-if(event.key === "Escape"){
-closePopup();
+@keyframes zoomBg 
+{
+	from 
+	{ 
+		background-size:100%;
+	}
+	to 
+	{
+		background-size: 110%;
+	}
 }
-});
 
-/* Load Transition */
-fetch("transition.html")
-.then(res => res.text())
-.then(data => {
+.services-headline{
+	font-size:42px;
+	font-weight:700;
+	color:black;
+	margin-bottom:25px;
+}
 
-    document.getElementById("transition-container").innerHTML = data;
+.services-headline span{
+	color:#e63946;
+}
 
-    /* fade out after load */
-    setTimeout(() => {
+.section{
+	padding:80px 10%;
+	text-align:center;
+}
 
-        const overlay = document.getElementById("page-transition");
+.section-headline{
+font-size:42px;
+	font-weight:700;
+	color:black;
+	margin-bottom:25px;
+}
+.services{
+	display:grid;
+	grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+	gap:25px;
+	margin-top:35px;
+	max-width:1000px;
+	margin-left:auto;
+	margin-right:auto;
+}
 
-        if(overlay){
-            overlay.classList.add("hide");
+.service-card{
+background:transparent;
+padding:25px 20px;
+border-radius:16px;
+box-shadow:0 8px 20px rgba(0,0,0,0.06);
+transition:all 0.3s ease;
+cursor:pointer;
+position:relative;
+text-align:center;
+max-width:280px;
+margin:auto;
+min-height:200px;
+width:100%;
+}
 
-            setTimeout(() => {
-                overlay.style.display = "none";
-            },500);
-        }
+.process-section{
+padding:120px 20px;
+background: linear-gradient(135deg, #000000, #1f2937);
+color:white;
+text-align:center;
+}
 
-    },600);
+.process-card{
+    animation: floatCard 4s ease-in-out infinite;
+}
 
-});
+.process-step:nth-child(1) .step-card { animation-delay:0s; }
+.process-step:nth-child(2) .step-card { animation-delay:0.5s; }
+.process-step:nth-child(3) .step-card { animation-delay:1s; }
+.process-step:nth-child(4) .step-card { animation-delay:1.5s; }
+.process-step:nth-child(5) .step-card { animation-delay:2s; }
 
-document.addEventListener("DOMContentLoaded", function () {
 
-    const servicesAnim = document.getElementById("services-lottie");
+.process-title{
+font-size:38px;
+font-weight:700;
+margin-bottom:15px;
+}
 
-    if (servicesAnim) {
-        lottie.loadAnimation({
-            container: servicesAnim,
-            renderer: "svg",
-            loop: true,
-            autoplay: true,
-            path: "resources/animations/services.json"
-        });
+.process-title span{
+color: #e63946;
+}
+.process-subtitle{
+max-width:700px;
+margin:0 auto 70px;
+opacity:0.9;
+font-size:17px;
+}
+
+.process-roadmap{
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+position:relative;
+gap:30px;
+}
+
+.process-roadmap::before{
+content:"";
+position:absolute;
+top:25px;
+left:0;
+right:0;
+height:4px;
+background: linear-gradient(
+90deg,
+#ff3b5c 0%,
+#ff3b5c 20%,
+#6c63ff 40%,
+#6c63ff 60%,
+#2f80ed 75%,
+#22c55e 100%
+);
+border-radius:4px;
+z-index:1;
+}
+
+.process-step{
+position:relative;
+flex:1;
+z-index:2;
+}
+
+.step-number{
+width:50px;
+height:50px;
+margin:0 auto 20px;
+background:#ff3c5f;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:600;
+color:white;
+box-shadow:0 10px 30px rgba(255,60,95,0.5);
+}
+
+.step-card{
+background:rgba(230, 57, 70, 0.12);
+border-radius:14px;
+padding:25px;
+color:#333;
+box-shadow:0 10px 30px rgb(255,57,70);
+transition:0.3s;
+animation: floatCard 2.5s ease-in-out infinite;
+}
+
+.step-card i{
+font-size:28px;
+color:#ff3c5f;
+margin-bottom:10px;
+display:block;
+}
+
+.step-card h4{
+font-weight:600;
+margin-bottom:8px;
+color: white;
+}
+
+.step-card p{
+font-size:14px;
+color:white;
+}
+
+.step-card:hover{
+transform:translateY(-6px);
+box-shadow:0 15px 35px rgba(0,0,0,0.2);
+}
+
+@keyframes floatCard {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+/* ================= FIXED LOGO ================= 
+.fixed-logo {
+	position: fixed;
+	top: 20px;
+	left: 30px;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	z-index: 9999;
+	cursor: pointer;
+}
+
+.fixed-logo img {
+	width: 45px;
+	height: 45px;
+	object-fit: contain;
+	background: transparent;
+}
+
+.logo-text {
+	display: flex;
+	flex-direction: column;
+	line-height: 1.1;
+}
+
+.logo-main {
+	font-size: 25px;
+	font-weight: 700;
+	color: #e63946;
+}
+ 
+.logo-sub {
+	font-size: 20px;
+	font-weight: 700; 
+	color: #e63946;
+}
+*/
+.search-box {
+	max-width: 600px;
+	margin: 30px auto;
+	background: rgba(230, 57, 70, 0.12);
+	border-radius: 50px;
+	overflow: hidden; 
+}
+
+.search-box input {
+	border: none;
+	padding: 15px;
+}
+
+/* ===== Scroll Down Indicator ===== */
+.scroll-down {
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 28px;
+	height: 45px;
+	border: 2px solid white;
+	border-radius: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding-top: 6px;
+	text-decoration: none; 
+	transition: 0.9s ease;
+}
+
+.scroll-down span {
+	width: 4px;
+	height: 8px;
+	background: white;
+	border-radius: 2px;
+	animation: scrollAnim 2.0s infinite;
+}
+
+@keyframes scrollAnim {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
     }
 
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const ctaAnim = document.getElementById("cta-lottie");
-
-    if (ctaAnim) {
-        lottie.loadAnimation({
-            container: ctaAnim,
-            renderer: "svg",
-            loop: true,
-            autoplay: true,
-            path: "resources/animations/contact.json"
-        });
+    50% {
+        opacity: 1;
     }
 
-});
-
-document.addEventListener("DOMContentLoaded", function(){
-
-const cards = document.querySelectorAll(".service-card");
-
-cards.forEach(card => {
-
-card.addEventListener("click", function(){
-
-cards.forEach(c => {
-if(c !== card){
-c.classList.remove("active");
+    100% {
+        opacity: 0;
+        transform: translateY(12px);
+    }
 }
-});
+.scroll-down:hover {
+	background: rgba(255, 255, 255, 0.1);
+}
 
-card.classList.toggle("active");
+/* ===== Google Play Button ===== */
 
-});
+/* ===== Google Play Button ===== */
+.store-buttons {
+	display: flex;
+	justify-content: center;
+	margin-top: 40px; /* moved slightly down */
+}
 
-});
+.google-play-btn {  
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	background: black;
+	color: white;
+	padding: 14px 28px;
+	border-radius: 14px;
+	text-decoration: none;
+	border: 2px solid white; /* outline added */
+	transition: 0.3s ease;
+}
 
-});
-</script>
+.play-icon {
+	width: 32px;
+	height: auto;
+}
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
-<script src="https://unpkg.com/@studio-freight/lenis@1.0.35/dist/lenis.min.js"></script>
+.btn-text {
+	display: flex;
+	flex-direction: column;
+	line-height: 1.1;
+}
 
-</body>
-</html>
+.btn-text small {
+	font-size: 11px;
+	letter-spacing: 1px;
+}
+
+.btn-text span {
+	font-size: 19px;
+	font-weight: 600;
+}
+
+.google-play-btn:hover {
+	transform: translateY(-4px);
+	background: #111;
+	box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+.section span{
+color:#e63946;
+}
+/* ================= DATAPATH SECTION ================= */
+.datapath-section {
+	padding: 120px 20px 100px;
+	background: #f4f6fb;
+	position: relative;
+	overflow: hidden;
+}
+
+.dp-headline {
+	font-size: 42px;
+	font-weight: 700;
+	color: #222;
+	margin-bottom: 25px;
+}
+
+.dp-headline span {
+	color: #e63946;
+}
+
+.dp-subheadline {
+	max-width: 750px;
+	margin: 0 auto 60px;
+	font-size: 18px;
+	color: #555;
+	line-height: 1.7;
+}
+
+/* ===== Stats Box ===== */
+.dp-stats-box {
+	background: white;
+	border-radius: 16px;
+	padding: 20px 25px;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+.stat-item {
+	padding: 15px;
+}
+
+.stat-wrapper{
+    display: flex;
+    align-items: flex-start;   /* keeps icon aligned at top */
+    gap: 15px;
+}
+
+
+
+.icon-box {
+	min-width: 50px;
+	height: 50px;
+	background: rgba(230, 57, 70, 0.12);
+	border-radius: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: 0.3s ease;
+}
+
+.icon-box i {
+	font-size: 22px;
+	color: #e63946;
+	transition: 0.3s ease;
+}
+
+.text-box h3 {
+	font-size: 18px;
+	font-weight: 600;
+	margin: 0;
+}
+
+.text-box p {
+	font-size: 13px;
+	color: #777;
+	margin: 3px 0 0;
+}
+
+.stat-item:hover .icon-box {
+	background: #e63946;
+	box-shadow: 0 10px 30px rgb(255, 57, 70);
+	transform: scale(1.08);
+}
+
+.stat-item:hover .icon-box i {
+	color: white; 
+}
+
+/* Floating Shapes */
+.datapath-section::before {
+	content: "";
+	position: absolute;
+	width: 250px;
+	height: 250px;
+	background: linear-gradient(135deg, #ff6a00, #ee0979);
+	border-radius: 50%;
+	top: -80px; 
+	left: -80px;
+	opacity: 0.1; 
+}
+
+.datapath-section::after {
+	content: "";
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	background: linear-gradient(135deg, #4facfe, #00f2fe);
+	border-radius: 50%;
+	bottom: -100px;
+	right: -100px;
+	opacity: 0.1;
+}
+
+/* Categories */
+.category-card {
+	border-radius: 18px;
+	border: 1px solid #e5e5e5;
+	transition: all 0.3s ease;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.category-card:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 10px 30px rgb(255, 57, 70);
+}
+
+.category-card h5 {
+	font-weight: 600;
+	margin-bottom: 8px;
+}
+
+.category-card p {
+	margin-bottom: 5px;
+	color: #555;
+}
+
+.loading-text {
+	font-size: 12px;
+	color: #999;
+	font-style: italic;
+}
+
+/* Animated dots */
+.dots::after {
+	content: "";
+	animation: dotsAnimation 1.5s infinite steps(3);
+}
+
+@keyframes dotsAnimation {
+    0%   { content: ""; }
+    33%  { content: "."; }
+    66%  { content: ".."; }
+    100% { content: "..."; }
+}
+
+.section-title {
+	font-weight: 700;
+	margin-bottom: 40px;
+}
+
+.section-title span {
+	color: #e63946;
+}
+
+/* ===== Explore Button ===== */
+.btn-explore {
+    background: rgba(230, 57, 70, 0.12);
+    box-shadow: 0 10px 30px rgb(255, 57, 70);
+    color: white;
+    border: none;
+    padding: 0 28px;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.btn-explore:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgb(255, 57, 70);
+    background: linear-gradient(135deg, #ff4d5a, #e63946);
+} 
+/* ================= APP FEATURES (DARK VERSION) ================= */
+.app-features-section {
+	padding: 140px 20px;
+	background: linear-gradient(135deg, #000000, #1f2937);
+	color: white;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+}
+
+/* Title */
+.app-title {
+	font-size: 42px;
+	font-weight: 700;
+	margin-bottom: 20px;
+	color: white;
+}
+
+.app-title span {
+	color: #ff4d5a;
+}
+
+.app-subtitle {
+	max-width: 700px;
+	margin: 0 auto 80px;
+	color: #bbbbbb;
+	font-size: 18px;
+}
+
+/* Wrapper */
+.features-wrapper {
+	position: relative;
+	max-width: 1000px;
+	margin: auto;
+	min-height: 500px;
+}
+
+/* Center Circle */
+.center-circle {
+	width: 240px;
+	height: 240px;
+	background: rgba(230, 57, 70, 0.12);
+	border-radius: 50%;
+	box-shadow: 0 15px 40px rgb(255, 57, 70);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 150px auto 0;
+	animation: floatCenter 4s ease-in-out infinite;
+}
+
+.center-circle h4 {
+	font-weight: 600;
+	margin-bottom: 5px;
+	color: white;
+}
+
+.center-circle p {
+	font-size: 14px;
+	color: #aaaaaa;
+}
+
+/* Feature Cards */
+.feature-card {
+	position: absolute;
+	width: 230px;
+	background: rgba(230, 57, 70, 0.12);
+	padding: 22px;
+	border-radius: 18px;
+	box-shadow: 0 10px 30px rgb(255, 57, 70);
+	transition: 0.3s ease;
+	color: white;
+}
+
+.feature-card h5 {
+	font-weight: 600;
+	margin-bottom: 8px;
+}
+
+.feature-card p {
+	font-size: 14px;
+	color: #aaaaaa;
+}
+
+.feature-card:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 15px 35px rgba(255, 77, 90, 0.25);
+}
+
+.loading-text {
+	font-size: 12px;
+	color: #999;
+	font-style: italic;
+}
+
+/* ===========Our services ===============
+/* ===== SERVICES SECTION ===== */
+
+.services-section{
+    padding:140px 20px 140px;
+    min-height:570px;
+    background:linear-gradient(135deg,#f8fafc,#eef2f7);
+    position:relative;
+    overflow:visible;
+    text-align:center;
+}
+
+.service-popup{
+position:absolute;
+top:100%;
+left:0;
+transform:translateX(-50%);
+width:280px;
+background:#f1f3f6;
+padding:18px 20px;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+opacity:0;
+visibility:hidden;
+transition:all 0.3s ease;
+font-size:14px;
+line-height:1.6;
+text-align:center;
+margin-top:18px;
+}
+
+/* arrow */
+.service-popup::before{
+content:"";
+position:absolute;
+top:-10px;
+left:50%;
+transform:translateX(-50%);
+border-left:10px solid transparent;
+border-right:10px solid transparent;
+border-bottom:10px solid #f1f3f6;
+}
+
+.service-popup span{
+	color: #e63946;
+}
+/* show popup on hover */
+.service-card:hover{
+    background: white;
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+        0 12px 35px rgba(0,0,0,0.12),
+        0 0 25px rgba(230,57,70,0.35);
+}
+.service-card:hover .service-popup{
+opacity:1;
+visibility:visible;
+background: white;
+    transform: translateY(8px) scale(1.02);
+    box-shadow:  
+        0 12px 35px rgba(0,0,0,0.12),
+        0 0 25px rgba(230,57,70,0.35);
+}
+/* Lottie background animation */
+
+#services-lottie{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(1.0);
+    width:70vw;
+	height:70vw;
+	max-width:700px;
+	max-height:700px;
+    opacity:0.35;
+    pointer-events:none;
+    z-index:0;
+}
+
+/* Ensure text/cards appear above animation */
+
+.services-headline,
+.services{
+    position:relative;
+    z-index:2;
+}
+
+.service-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+}
+
+.service-card-link:hover {
+    text-decoration: none;
+    color: inherit;
+} 
+
+/* Floating Shapes 
+.services-section::before {
+	content: "";
+	position: absolute;
+	width: 250px;
+	height: 250px;
+	background: linear-gradient(135deg, #ff6a00, #ee0979);
+	border-radius: 50%;
+	top: -80px;
+	left: -80px;
+	opacity: 0.1;
+} 
+
+.services-section::after {
+	content: "";
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	background: linear-gradient(135deg, #4facfe, #00f2fe);
+	border-radius: 50%;
+	bottom: -100px;
+	right: -100px;
+	opacity: 0.1;
+}
+*/
+
+/* ================= Learning tracks ================= */
+.services-section{
+    padding: 120px 20px 100px;
+    background: linear-gradient(135deg, #f8fafc, #eef2f7);
+    position: relative;
+    overflow: visible;
+}
+
+/* Floating Shapes 
+
+
+.popular-section::after {
+	content: "";
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	background: linear-gradient(135deg, #4facfe, #00f2fe);
+	border-radius: 50%;
+	bottom: -100px;
+	right: -100px;
+	opacity: 0.1;
+}
+*/
+/* Positioning */
+.card-1 {
+	top: -90px;
+	left: 0;
+	animation: float1 5s infinite;
+}
+
+.card-2 {
+	top: 110px;
+	left: -40px;
+	animation: float2 6s infinite;
+}
+
+.card-3 {
+	bottom: 0;
+	left: 0;
+	animation: float2 5s infinite;
+}
+
+.card-4 {
+	top: 110px;
+	right: -40px;
+	animation: float2 6s infinite;
+}
+
+.card-5 {
+	bottom: 0px;
+	right: 0;
+	animation: float1 5s infinite;
+}
+
+.card-6 {
+	top: -100px;
+	right: 0;
+	animation: float1 7s infinite;
+}
+/* Animations */
+@keyframes floatCenter 
+{ 
+	0% 
+	{
+		transform: translateY(0);
+	}
+	50%
+	{
+		transform:translateY(-15px);
+	}
+	100%
+	{
+		transform:translateY(0);
+	}
+}
+@keyframes float1 { 
+	0% 
+	{
+		transform: translateY(0);
+	}
+	50%
+	{
+		transform:translateY(-8px);
+	}
+	100%
+	{
+		transform:translateY(0);
+	}
+}
+@keyframes float2 
+{ 
+	0% 
+	{
+		transform: translateY(0);
+	}
+	50%
+	{
+		transform:translateY(6px);
+	}
+	100%
+	{
+		transform:translateY(0);
+	}
+}
+@keyframes float3 
+{ 
+	0% 
+	{
+		transform: translateY(0);
+	}
+	50%
+	{
+		transform: translateY(-12px);
+	}
+	100%
+	{
+		transform:translateY(0);
+	} 
+}
+
+/* CTA Section */
+
+.cta{
+background:#f4f6fb;
+color:#222;
+padding:60px 6%;
+position:relative;
+overflow:hidden;
+min-height:420px;
+display:flex;
+align-items:center;
+}
+
+/* container */
+
+.cta-container{
+display:flex;
+align-items:center;
+justify-content:space-between;
+width:100%;
+max-width:1200px;
+margin:auto;
+}
+
+/* content */
+
+.cta-content{
+max-width:600px;
+z-index:2;
+margin-left:80px;
+}
+
+/* Lottie animation */
+
+#cta-lottie{
+position:absolute;
+right:-40px;
+top:50%;
+transform:translateY(-50%);
+width:520px;
+height:520px;
+pointer-events:none;
+}
+
+/* floating shape */
+
+.cta::before{
+content:"";
+position:absolute;
+width:250px;
+height:250px;
+background:linear-gradient(135deg,#ff6a00,#ee0979);
+border-radius:50%;
+top:-80px;
+left:-80px;
+opacity:0.12;
+}
+
+/* headline */
+
+.cta-headline{
+font-size:40px;
+font-weight:700;
+color:#222;
+margin-bottom:18px;
+}
+
+.cta-headline span{
+color:#e63946;
+}
+
+/* subtitle */
+
+.cta p{
+max-width:600px;
+font-size:18px;
+color:#555;
+line-height:1.7;
+}
+
+/* button */
+
+.cta a{
+display:inline-block;
+margin-top:25px;
+padding:14px 32px;
+background:#e63946;
+color:white;
+border-radius:40px;
+font-weight:600;
+text-decoration:none;
+transition:all 0.3s ease;
+}
+
+.cta a:hover{
+background:#c81d2e;
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(230,57,70,0.35);
+}
+
+/* responsive */
+
+@media (max-width:900px){
+
+.cta{
+padding:80px 20px;
+text-align:center;
+}
+
+.cta-container{
+flex-direction:column;
+}
+
+#cta-lottie{
+position:relative;
+right:0;
+top:0;
+transform:none;
+width:320px;
+height:320px;
+margin-top:30px;
+}
+
+}
+/* PROCESS */
+
+.process{
+display:flex;
+flex-wrap:wrap;
+gap:30px;
+margin-top:40px;
+justify-content:center;
+}
+
+.step{
+background:white;
+padding:25px;
+border-radius:12px;
+width:220px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.step:hover{
+transform:scale(1.05);
+}
+/* ================= FOOTER ================= */
+/* ===== Footer Google Play Button (White Version) ===== */
+.footer-google-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px; 
+	background: black;
+	padding: 10px 15px;
+	border-radius: 10px;
+	border: 1px solid #444;
+	text-decoration: none;
+	transition: 0.3s ease;
+	margin-top: 20px;
+}
+
+.footer-google-btn:hover {
+	border-color: #e63946;
+	box-shadow: 0 0 12px rgba(230, 57, 70, 0.3);
+}
+
+/* Icon */
+.footer-play-icon {
+	width: 24px;
+}
+
+/* Text container */
+.footer-btn-text {
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* 👈 centers GET IT ON */
+	line-height: 1.1;
+}
+
+/* GET IT ON */
+.footer-btn-text small {
+	font-size: 11px;
+	letter-spacing: 1px;
+	color: white; /* 👈 white */
+}
+
+/* Google Play */
+.footer-btn-text span {
+	font-size: 19px;
+	font-weight: 600;
+	color: white; /* 👈 white */
+}
+
+.footer-section {
+	background: #0f0f0f;
+	color: #bbb;
+	padding: 80px 20px 40px;
+}
+
+.footer-logo {
+	font-size: 28px;
+	font-weight: 700;
+	color: #e63946;
+	margin-bottom: 20px;
+}
+
+.footer-section h5 {
+	color: white;
+	margin-bottom: 18px;
+	font-weight: 600;
+}
+
+.footer-links {
+	list-style: none;
+	padding: 0;
+}
+
+.footer-links li {
+	margin-bottom: 10px;
+}
+
+.footer-links a {
+	text-decoration: none;
+	color: #aaa;
+	transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+	color: #e63946;
+}
+
+/* Social Icons */
+.social-icons {
+	display: flex;
+	gap: 12px;
+}
+
+.social-icons a {
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	background: #1a1a1a;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #ccc;
+	transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+	background: #e63946;
+	color: white;
+}
+
+/* Store Button */
+.store-btn {
+	display: inline-block;
+	padding: 10px 18px;
+	background: black;
+	border: 1px solid #444;
+	border-radius: 10px;
+	text-decoration: none;
+	color: white;
+	font-size: 14px;
+	transition: 0.3s ease;
+}
+
+.store-btn:hover {
+	background: #1c1c1c;
+	border-color: #e63946;
+}
+
+/* Divider */
+.footer-divider {
+	border-color: #222;
+	margin: 50px 0 20px;
+}
+
+/* Bottom Text */
+.footer-bottom-text {
+	font-size: 13px;
+	color: #777;
+	text-align: center;
+}
+
+/* ===== COMPACT SINGLE LINE FOOTER ===== */
+.footer-divider {
+	border-color: #222;
+	margin: 30px 0 15px;
+}
+
+.footer-compact {
+	text-align: center;
+	font-size: 11px; /* smaller */
+	color: #aaa;
+	white-space: nowrap; /* force single line */
+	overflow-x: auto; /* allow scroll on very small screens */
+	padding: 10px 15px 20px;
+}
+
+/* Links */
+.footer-compact a {
+	color: #aaa;
+	text-decoration: none;
+	transition: 0.3s ease;
+}
+
+.footer-compact a:hover {
+	color: #e63946;
+}
+
+/* Lock icon */
+.footer-compact i {
+	color: #e63946;
+	margin: 0 4px;
+}
+
+/* Razorpay logo */
+.razorpay-logo {
+	height: 13px;
+	vertical-align: middle;
+	margin-left: 4px;
+}
+
+/* Move support column slightly right */
+
+.footer-support{
+padding-left:80px;
+}
+/* ===== Page Transition ===== */
+
+.form-notice{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:9999;
+}
+
+.notice-box{
+background:white;
+width:420px;
+padding:30px;
+border-radius:10px;
+text-align:center;
+position:relative;
+box-shadow:0 10px 30px rgb(255,57,70);
+}
+
+.close-btn{
+position:absolute;
+top:10px;
+right:15px;
+font-size:24px;
+cursor:pointer;
+}
+
+.popup-headline{
+font-size: 25px;
+	font-weight: 700;
+	color: #222;
+	margin-bottom: 25px;
+}
+
+/* =========================================
+   MOBILE RESPONSIVE FIX
+========================================= */
+
+@media (max-width: 768px){
+
+/* ===== HEADER ===== */
+
+.header-bar{
+flex-direction:column;
+height:auto;
+padding:15px;
+gap:10px;
+align-items:center;
+}
+
+.hero-nav{
+margin-left:0;
+gap:20px;
+}
+
+/* ===== HERO SECTION ===== */
+
+.hero{
+padding:120px 20px 80px;
+height:auto;
+}
+
+.hero h1{
+font-size:30px;
+line-height:1.3;
+}
+
+.hero p{
+font-size:15px;
+}
+
+/* ===== SEARCH BOX ===== */
+
+.search-box{
+max-width:100%;
+}
+
+/* ===== DATAPATH SECTION ===== */
+
+.dp-headline{
+font-size:28px;
+}
+
+.dp-subheadline{
+font-size:16px;
+}
+
+/* ===== APP FEATURES SECTION ===== */
+
+.features-wrapper{
+min-height:auto;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:20px;
+}
+
+.feature-card{
+position:relative;
+width:100%;
+margin:0 auto;
+left:auto;
+right:auto;
+top:auto;
+bottom:auto;
+max-width:320px;
+}
+
+.center-circle{
+margin:30px auto;
+width:200px;
+height:200px;
+}
+
+/* ===== SERVICES ===== */
+
+.services{
+grid-template-columns:1fr;
+gap:20px;
+}
+
+/* card layout */
+
+.service-card{
+width:100%;
+max-width:100%;
+position:relative;
+overflow:visible;
+}
+
+/* popup behaviour for mobile */
+
+.service-popup{
+position:relative;
+top:auto;
+left:auto;
+transform:none;
+margin-top:12px;
+width:100%;
+display:none;
+opacity:0;
+visibility:hidden;
+}
+
+/* remove popup arrow */
+
+.service-popup::before{
+display:none;
+}
+
+/* show popup when card active */
+
+.service-card.active .service-popup{
+display:block;
+opacity:1;
+visibility:visible;
+}
+
+/* ===== PROCESS ROADMAP ===== */
+
+.process-roadmap{
+flex-direction:column;
+align-items:center;
+gap:40px;
+}
+
+.process-roadmap::before{
+display:none;
+}
+
+.process-step{
+width:100%;
+max-width:320px;
+}
+
+/* ===== CTA ===== */
+
+.cta-container{
+flex-direction:column;
+text-align:center;
+}
+
+.cta-content{
+margin-left:0;
+}
+
+/* ===== FOOTER ===== */
+
+.footer-support{
+padding-left:0;
+text-align:left;
+}
+
+.footer-section .row{
+text-align:center;
+}
+
+.social-icons{
+justify-content:center;
+}
+
+}
+
+/* ===== GLOBAL IMAGE FIX ===== */
+
+img{
+max-width:100%;
+height:auto;
+}
