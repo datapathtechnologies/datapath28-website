@@ -1444,6 +1444,13 @@ gap:20px;
 .hero{
 padding:120px 20px 80px;
 height:auto;
+	/* mobile background fix */
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
+/* stop zoom animation on mobile */
+animation:none;
 }
 
 .hero h1{
@@ -1593,3 +1600,4 @@ img{
 max-width:100%;
 height:auto;
 }
+
