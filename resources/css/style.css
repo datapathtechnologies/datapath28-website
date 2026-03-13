@@ -1441,7 +1441,7 @@ font-size: 25px;
 .header-bar{
 flex-direction:column;
 height:auto;
-padding:15px 20px;
+padding:8px 16px;
 gap:10px;
 align-items:center;
 
@@ -1650,3 +1650,4 @@ img{
 max-width:100%;
 height:auto;
 }
+
