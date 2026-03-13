@@ -642,6 +642,19 @@ card.classList.toggle("active");
 });
 
 });
+
+window.addEventListener("scroll", function(){
+
+const header = document.querySelector(".header-bar");
+const hero = document.querySelector(".hero");
+
+if(window.scrollY > hero.offsetHeight - 80){
+header.classList.add("header-white");
+}else{
+header.classList.remove("header-white");
+}
+
+});
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
