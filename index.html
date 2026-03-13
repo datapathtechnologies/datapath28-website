@@ -620,6 +620,28 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+document.addEventListener("DOMContentLoaded", function(){
+
+const cards = document.querySelectorAll(".service-card");
+
+cards.forEach(card => {
+
+card.addEventListener("click", function(){
+
+cards.forEach(c => {
+if(c !== card){
+c.classList.remove("active");
+}
+});
+
+card.classList.toggle("active");
+
+});
+
+});
+
+});
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
