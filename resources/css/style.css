@@ -1441,8 +1441,8 @@ font-size: 25px;
 .header-bar{
 flex-direction:column;
 height:auto;
-padding:8px 16px;
-gap:10px;
+padding:8px 8px;
+gap:8px;
 align-items:center;
 
 /* transparent on hero */
@@ -1650,4 +1650,5 @@ img{
 max-width:100%;
 height:auto;
 }
+
 
