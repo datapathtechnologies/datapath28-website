@@ -1470,39 +1470,18 @@ MOBILE VIEW (PHONES)
 
 .header-bar{
 display:flex;
-flex-direction:row;
 justify-content:space-between;
 align-items:center;
 padding:10px 16px;
-height:auto;
-gap:10px;
-background:transparent;
-box-shadow:none;
 position:absolute;
 top:0;
 left:0;
 width:100%;
 z-index:1000;
-transition:.3s ease;
-}
-
-.header-white{
-background:#ffffff;
-box-shadow:0 2px 8px rgba(0,0,0,.05);
-position:sticky;
-top:0;
 }
 
 .logo-wrapper img{
 height:34px;
-width:auto;
-}
-
-.hero-nav{
-margin-left:0;
-gap:14px;
-flex-wrap:wrap;
-justify-content:center;
 }
 
 
@@ -1510,12 +1489,9 @@ justify-content:center;
 
 .hero{
 min-height:100vh;
-padding:140px 20px 80px;
+padding:130px 20px 80px;
 background-size:cover;
-background-position:center center;
-background-repeat:no-repeat;
-animation:none;
-
+background-position:center;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -1525,33 +1501,13 @@ text-align:center;
 
 .hero h1{
 font-size:28px;
-line-height:1.35;
+line-height:1.3;
 }
 
 .hero p{
 font-size:15px;
 max-width:90%;
 margin:auto;
-}
-
-
-/* ===== SEARCH BOX ===== */
-
-.search-box{
-max-width:100%;
-width:100%;
-}
-
-
-/* ===== DATAPATH INTRO ===== */
-
-.dp-headline{
-font-size:26px;
-}
-
-.dp-subheadline{
-font-size:15px;
-line-height:1.6;
 }
 
 
@@ -1565,18 +1521,10 @@ flex-direction:column;
 align-items:center;
 gap:24px;
 padding:20px;
-min-height:auto;
 }
-
-/* IMPORTANT: override tablet absolute rule */
 
 .feature-card{
 position:relative !important;
-top:auto;
-left:auto;
-right:auto;
-bottom:auto;
-
 width:100%;
 max-width:320px;
 margin:auto;
@@ -1585,82 +1533,126 @@ margin:auto;
 .center-circle{
 width:180px;
 height:180px;
-margin:30px auto;
+margin:25px auto;
 }
 
 
 /* =========================================
-OUR SERVICES
+OUR SERVICES (VISUAL FIX)
 ========================================= */
-
-/* mobile uses single column */
 
 .services{
 display:grid;
 grid-template-columns:1fr;
-gap:20px;
+gap:18px;
 padding:20px;
 max-width:420px;
 margin:auto;
 }
 
 .service-card{
-background:transparent;
-padding:25px 20px;
-border-radius:16px;
-box-shadow:0 8px 20px rgba(0,0,0,0.06);
+
+background:#ffffff;
+
+padding:18px 18px;
+
+border-radius:14px;
+
+box-shadow:
+0 6px 16px rgba(0,0,0,0.08);
+
 cursor:pointer;
 
-position:relative;
 text-align:center;
 
-max-width:280px;
+max-width:340px;
 margin:auto;
-min-height:200px;
+
 width:100%;
 
+transition:all .25s ease;
+
+position:relative;
 overflow:visible;
 }
 
-/* popup expands downward */
+.service-card:hover{
+transform:translateY(-3px);
+box-shadow:
+0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* compact title */
+
+.service-card h4{
+font-size:20px;
+margin-bottom:6px;
+}
+
+/* compact description */
+
+.service-card p{
+font-size:14px;
+line-height:1.5;
+}
+
+
+/* ===== POPUP (VISUAL IMPROVEMENT) ===== */
 
 .service-popup{
-position:relative;
-top:auto;
-left:auto;
-transform:none;
 
-margin-top:12px;
-width:100%;
+position:absolute;
+
+top:calc(100% + 14px);
+left:50%;
+
+transform:translateX(-50%);
+
+width:90%;
+max-width:300px;
 
 background:#ffffff;
-padding:16px 18px;
+
+padding:18px 16px;
+
 border-radius:12px;
 
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
+box-shadow:
+0 12px 30px rgba(0,0,0,0.18);
+
+font-size:14px;
+line-height:1.5;
 
 opacity:0;
 visibility:hidden;
-transition:.3s ease;
+
+transition:.25s ease;
+
+z-index:5;
 }
 
+/* popup arrow */
+
 .service-popup::before{
-display:none;
+
+content:"";
+
+position:absolute;
+
+top:-8px;
+left:50%;
+
+transform:translateX(-50%);
+
+border-left:8px solid transparent;
+border-right:8px solid transparent;
+border-bottom:8px solid white;
+
 }
 
 .service-card.active .service-popup{
 opacity:1;
 visibility:visible;
-}
-
-
-/* animation background */
-
-#services-lottie{
-width:100%;
-max-width:420px;
-height:auto;
-opacity:.25;
 }
 
 
@@ -1672,51 +1664,28 @@ PROCESS SECTION
 display:flex;
 flex-direction:column;
 align-items:center;
-gap:50px;
-
-position:relative;
+gap:45px;
 padding:20px;
 }
 
 .process-roadmap::before{
 content:"";
 position:absolute;
-
 left:50%;
 top:0;
 bottom:0;
-
 width:3px;
 background:#ff2c55;
-
 transform:translateX(-50%);
 }
 
 .process-step{
-width:100%;
 max-width:320px;
 text-align:center;
-position:relative;
 }
 
 .step-card{
 width:100%;
-}
-
-.process-step::before{
-content:"";
-position:absolute;
-
-top:-20px;
-left:50%;
-
-width:14px;
-height:14px;
-
-background:#ff2c55;
-border-radius:50%;
-
-transform:translateX(-50%);
 }
 
 
@@ -1725,7 +1694,7 @@ CTA SECTION
 ========================================= */
 
 .cta{
-padding:80px 20px;
+padding:70px 20px;
 text-align:center;
 }
 
@@ -1733,24 +1702,12 @@ text-align:center;
 display:flex;
 flex-direction:column;
 align-items:center;
-text-align:center;
 gap:20px;
 }
 
-.cta-content{
-margin-left:0;
-max-width:100%;
-}
-
 #cta-lottie{
-position:relative;
-right:0;
-top:0;
-transform:none;
-
-width:300px;
-height:300px;
-
+width:260px;
+height:260px;
 margin-top:20px;
 }
 
@@ -1766,27 +1723,9 @@ align-items:center;
 text-align:center;
 }
 
-.footer-logo{
-margin-bottom:15px;
-}
-
-.footer-support{
-padding-left:0;
-text-align:center;
-}
-
 .footer-column{
-width:100%;
 max-width:320px;
-margin-bottom:25px;
-}
-
-.footer-column h3{
-text-align:center;
-}
-
-.footer-column a{
-display:block;
+margin-bottom:22px;
 }
 
 .social-icons{
@@ -1798,7 +1737,6 @@ gap:15px;
 }
 
 
-
 /* =========================================
 TABLET VIEW
 ========================================= */
@@ -1808,23 +1746,16 @@ TABLET VIEW
 .services{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:30px;
+gap:28px;
 padding:30px;
-}
-
-.service-card{
-max-width:100%;
 }
 
 .service-popup{
 position:absolute;
-top:calc(100% + 12px);
+top:calc(100% + 14px);
 left:50%;
 transform:translateX(-50%);
 }
-
-
-/* PROCESS */
 
 .process-roadmap{
 flex-wrap:wrap;
@@ -1836,22 +1767,6 @@ gap:40px;
 display:none;
 }
 
-.process-step{
-max-width:320px;
-width:100%;
-}
-
-
-/* HERO */
-
-.hero{
-background-position:center center;
-background-size:cover;
-}
-
-
-/* restore circular feature layout */
-
 .features-wrapper{
 position:relative;
 display:block;
@@ -1862,7 +1777,6 @@ position:absolute;
 }
 
 }
-
 
 
 /* =========================================
