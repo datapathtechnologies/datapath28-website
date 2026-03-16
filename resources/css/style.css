@@ -1461,7 +1461,7 @@ font-size: 25px;
 }
 
 /* =========================================
-   MOBILE RESPONSIVE FIX
+MOBILE RESPONSIVE FIX
 ========================================= */
 
 @media (max-width:768px){
@@ -1589,44 +1589,66 @@ margin:30px auto;
 OUR SERVICES
 ========================================= */
 
+/* Keep tiles like desktop (2x2 layout) */
+
 .services{
 display:grid;
-grid-template-columns:1fr;
-gap:24px;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
 padding:20px;
+max-width:900px;
+margin:auto;
 }
 
 .service-card{
-width:100%;
-max-width:100%;
+background:transparent;
+padding:25px 20px;
+border-radius:16px;
+box-shadow:0 8px 20px rgba(0,0,0,0.06);
+cursor:pointer;
 position:relative;
-overflow:visible;
-display:flex;
-flex-direction:column;
-align-items:center;
 text-align:center;
+max-width:280px;
+margin:auto;
+min-height:200px;
+width:100%;
+overflow:visible;
 }
 
-/* popup expands downward instead of overlap */
+/* popup positioned under tile */
 
 .service-popup{
-position:relative;
-top:auto;
-left:auto;
-transform:none;
-margin-top:12px;
-width:100%;
-display:none;
+position:absolute;
+top:calc(100% + 12px);
+left:50%;
+transform:translateX(-50%);
+
+width:260px;
+background:#ffffff;
+padding:16px 18px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+
 opacity:0;
 visibility:hidden;
+transition:.3s ease;
+z-index:5;
 }
 
 .service-popup::before{
-display:none;
+content:"";
+position:absolute;
+top:-10px;
+left:50%;
+transform:translateX(-50%);
+border-left:10px solid transparent;
+border-right:10px solid transparent;
+border-bottom:10px solid white;
 }
 
+/* show popup when active */
+
 .service-card.active .service-popup{
-display:block;
 opacity:1;
 visibility:visible;
 }
@@ -1773,10 +1795,7 @@ TABLET / DESKTOP-MODE MOBILE
 
 @media (max-width:1024px){
 
-/* SERVICES GRID */
-
 .services{
-display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:30px;
 padding:30px;
@@ -1787,15 +1806,12 @@ max-width:100%;
 }
 
 .service-popup{
-position:relative;
-top:auto;
-left:auto;
-transform:none;
-margin-top:12px;
+top:calc(100% + 12px);
+left:50%;
+transform:translateX(-50%);
 }
 
-
-/* PROCESS SECTION */
+/* PROCESS */
 
 .process-roadmap{
 flex-wrap:wrap;
@@ -1813,7 +1829,7 @@ width:100%;
 }
 
 
-/* HERO BACKGROUND */
+/* HERO */
 
 .hero{
 background-position:center center;
@@ -1821,7 +1837,7 @@ background-size:cover;
 }
 
 
-/* IMPORTANT: keep circular features layout */
+/* keep circular features */
 
 .features-wrapper{
 position:relative;
