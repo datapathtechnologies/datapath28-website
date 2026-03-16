@@ -16,6 +16,7 @@ html, body{
 width:100%;
 overflow-x:hidden;
 scroll-behavior:smooth;
+-webkit-font-smoothing:antialiased;
 }
 
 *,
@@ -194,7 +195,7 @@ min-height:600px;
 .hero h1{
 font-size:48px;
 font-weight:700;
-
+color:#ffffff;
 background: linear-gradient(
 90deg,
 #ffffff,
@@ -230,9 +231,6 @@ margin:20px auto 30px;
 line-height:1.6;
 }
 
-.hero *{
--webkit-text-fill-color:unset;
-}
 
 @keyframes zoomBg 
 {
