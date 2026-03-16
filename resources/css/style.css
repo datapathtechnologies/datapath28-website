@@ -1461,7 +1461,7 @@ font-size: 25px;
 }
 
 /* =========================================
-MOBILE RESPONSIVE FIX
+MOBILE VIEW (PHONES)
 ========================================= */
 
 @media (max-width:768px){
@@ -1515,6 +1515,7 @@ background-size:cover;
 background-position:center center;
 background-repeat:no-repeat;
 animation:none;
+
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -1567,12 +1568,15 @@ padding:20px;
 min-height:auto;
 }
 
+/* IMPORTANT: override tablet absolute rule */
+
 .feature-card{
-position:relative;
+position:relative !important;
 top:auto;
 left:auto;
 right:auto;
 bottom:auto;
+
 width:100%;
 max-width:320px;
 margin:auto;
@@ -1589,14 +1593,14 @@ margin:30px auto;
 OUR SERVICES
 ========================================= */
 
-/* Keep tiles like desktop (2x2 layout) */
+/* mobile uses single column */
 
 .services{
 display:grid;
-grid-template-columns:repeat(2,1fr);
+grid-template-columns:1fr;
 gap:20px;
 padding:20px;
-max-width:900px;
+max-width:420px;
 margin:auto;
 }
 
@@ -1606,47 +1610,43 @@ padding:25px 20px;
 border-radius:16px;
 box-shadow:0 8px 20px rgba(0,0,0,0.06);
 cursor:pointer;
+
 position:relative;
 text-align:center;
+
 max-width:280px;
 margin:auto;
 min-height:200px;
 width:100%;
+
 overflow:visible;
 }
 
-/* popup positioned under tile */
+/* popup expands downward */
 
 .service-popup{
-position:absolute;
-top:calc(100% + 12px);
-left:50%;
-transform:translateX(-50%);
+position:relative;
+top:auto;
+left:auto;
+transform:none;
 
-width:260px;
+margin-top:12px;
+width:100%;
+
 background:#ffffff;
 padding:16px 18px;
 border-radius:12px;
+
 box-shadow:0 10px 25px rgba(0,0,0,0.15);
 
 opacity:0;
 visibility:hidden;
 transition:.3s ease;
-z-index:5;
 }
 
 .service-popup::before{
-content:"";
-position:absolute;
-top:-10px;
-left:50%;
-transform:translateX(-50%);
-border-left:10px solid transparent;
-border-right:10px solid transparent;
-border-bottom:10px solid white;
+display:none;
 }
-
-/* show popup when active */
 
 .service-card.active .service-popup{
 opacity:1;
@@ -1654,7 +1654,7 @@ visibility:visible;
 }
 
 
-/* background animation fix */
+/* animation background */
 
 #services-lottie{
 width:100%;
@@ -1673,6 +1673,7 @@ display:flex;
 flex-direction:column;
 align-items:center;
 gap:50px;
+
 position:relative;
 padding:20px;
 }
@@ -1680,11 +1681,14 @@ padding:20px;
 .process-roadmap::before{
 content:"";
 position:absolute;
+
 left:50%;
 top:0;
 bottom:0;
+
 width:3px;
 background:#ff2c55;
+
 transform:translateX(-50%);
 }
 
@@ -1702,12 +1706,16 @@ width:100%;
 .process-step::before{
 content:"";
 position:absolute;
+
 top:-20px;
 left:50%;
+
 width:14px;
 height:14px;
+
 background:#ff2c55;
 border-radius:50%;
+
 transform:translateX(-50%);
 }
 
@@ -1739,8 +1747,10 @@ position:relative;
 right:0;
 top:0;
 transform:none;
+
 width:300px;
 height:300px;
+
 margin-top:20px;
 }
 
@@ -1790,12 +1800,13 @@ gap:15px;
 
 
 /* =========================================
-TABLET / DESKTOP-MODE MOBILE
+TABLET VIEW
 ========================================= */
 
-@media (max-width:1024px){
+@media (min-width:769px) and (max-width:1024px){
 
 .services{
+display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:30px;
 padding:30px;
@@ -1806,10 +1817,12 @@ max-width:100%;
 }
 
 .service-popup{
+position:absolute;
 top:calc(100% + 12px);
 left:50%;
 transform:translateX(-50%);
 }
+
 
 /* PROCESS */
 
@@ -1837,7 +1850,7 @@ background-size:cover;
 }
 
 
-/* keep circular features */
+/* restore circular feature layout */
 
 .features-wrapper{
 position:relative;
