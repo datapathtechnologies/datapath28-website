@@ -1652,7 +1652,7 @@ line-height:1.5;
 position:absolute;
 
 top:calc(100% + 14px);
-left:50%;
+left:0;
 
 transform:translateX(-50%);
 
@@ -1671,7 +1671,7 @@ font-size:14px;
 line-height:1.5;
 
 opacity:0;
-visibility:hidden;
+visibility:visible;
 
 transition:all .25s ease;
 
