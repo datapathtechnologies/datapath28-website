@@ -932,17 +932,19 @@ border-bottom:10px solid #f1f3f6;
 }
 /* show popup on hover */
 .service-card:hover{
-    background: white;
-    transform:translateX(-50%) translateY(8px);
-    box-shadow: 
+    background:white;
+    transform:translateY(-8px) scale(1.02);
+    box-shadow:
         0 12px 35px rgba(0,0,0,0.12),
         0 0 25px rgba(230,57,70,0.35);
+    z-index:1000;
 }
+
 .service-card:hover .service-popup{
 opacity:1;
 visibility:visible;
 background: white;
-    transform: translateX(-50%) translateY(8px);
+    transform: translateX(-50%) translateY(0);
     box-shadow:  
         0 12px 35px rgba(0,0,0,0.12),
         0 0 25px rgba(230,57,70,0.35);
@@ -1706,7 +1708,7 @@ line-height:1.5;
 .service-popup{
 position:absolute;
 top:calc(100% + 14px);
-left:0;
+left:50%;
 transform:translateX(-50%);
 width:260px;
 background:#ffffff;
