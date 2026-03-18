@@ -525,6 +525,8 @@ box-shadow:0 15px 35px rgba(0,0,0,0.2);
 	padding-top: 6px;
 	text-decoration: none; 
 	transition: 0.9s ease;
+	z-index:3;
+	cursor:pointer;
 }
 
 .scroll-down span {
