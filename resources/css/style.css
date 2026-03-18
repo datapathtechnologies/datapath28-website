@@ -121,7 +121,7 @@ max-width:none !important;
 flex-shrink:0;
 
 /* push logo fully to edge */
-margin-left:10px;
+margin-left:0;
 }
 
 .logo-text{
