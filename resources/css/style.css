@@ -113,8 +113,7 @@ text-decoration:none;
 }
 
 .logo-wrapper img{
-width:55px;
-margin-left:-10px;
+width:70px;
 }
 
 .logo-text{
@@ -523,6 +522,7 @@ box-shadow:0 15px 35px rgba(0,0,0,0.2);
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
+	z-index:5;
 	padding-top: 6px;
 	text-decoration: none; 
 	transition: 0.9s ease;
