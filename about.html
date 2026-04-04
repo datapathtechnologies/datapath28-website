@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>About Us | DataPath Technologies – Chennai, Tamil Nadu</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Learn about DataPath Technologies – a digital solutions company based in Chennai, Tamil Nadu, helping businesses build modern web, mobile, and data products.">
+<link rel="canonical" href="https://www.datapathtech.in/about">
+
+<link rel="icon" type="image/png" sizes="32x32" href="resources/images/dp_title_logo.png">
+<link rel="apple-touch-icon" href="resources/images/dp_title_logo.png">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="resources/css/style.css">
+
+<style>
+
+/* ══════════════════════════════
+   PAGE HERO
+══════════════════════════════ */
+.about-hero {
+  position: relative;
+  min-height: 480px;
+  background: linear-gradient(135deg, #000000, #1f2937);
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; overflow: hidden;
+  padding: 140px 20px 100px;
+}
+.about-hero::before {
+  content: "";
+  position: absolute; width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(230,57,70,0.18), transparent 70%);
+  top: -120px; left: -120px;
+  animation: driftA 10s ease-in-out infinite alternate;
+}
+.about-hero::after {
+  content: "";
+  position: absolute; width: 400px; height: 400px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(230,57,70,0.12), transparent 70%);
+  bottom: -100px; right: -80px;
+  animation: driftB 12s ease-in-out infinite alternate;
+}
+@keyframes driftA { from{transform:translate(0,0);} to{transform:translate(60px,40px);} }
+@keyframes driftB { from{transform:translate(0,0);} to{transform:translate(-50px,-30px);} }
+.about-hero-inner { position: relative; z-index: 2; }
+.about-hero-tag {
+  display: inline-block; padding: 6px 18px;
+  background: rgba(230,57,70,0.15); border: 1px solid rgba(230,57,70,0.4);
+  border-radius: 40px; color: #e63946; font-size: 13px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 24px;
+}
+.about-hero h1 { font-size: 52px; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 20px; }
+.about-hero h1 span { color: #e63946; }
+.about-hero p { font-size: 18px; color: #aaa; max-width: 620px; margin: 0 auto; line-height: 1.7; }
+
+/* ══════════════════════════════
+   WHO WE ARE
+══════════════════════════════ */
+.who-section { padding: 120px 20px; background: #f4f6fb; position: relative; overflow: hidden; }
+.who-section::before {
+  content: ""; position: absolute; width: 300px; height: 300px; border-radius: 50%;
+  background: linear-gradient(135deg, #ff6a00, #ee0979); top: -80px; left: -80px; opacity: 0.07;
+}
+.who-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 70px; align-items: center; max-width: 1100px; margin: 0 auto;
+}
+.who-text .section-badge {
+  display: inline-block; padding: 5px 16px; background: rgba(230,57,70,0.1);
+  border-radius: 30px; color: #e63946; font-size: 12px; font-weight: 600;
+  letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 20px;
+}
+.who-text h2 { font-size: 38px; font-weight: 700; color: #222; line-height: 1.25; margin-bottom: 22px; }
+.who-text h2 span { color: #e63946; }
+.who-text p { font-size: 17px; color: #555; line-height: 1.8; margin-bottom: 16px; }
+.who-stats { display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
+.stat-pill {
+  background: white; border-radius: 14px; padding: 16px 22px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.07); text-align: center; min-width: 110px;
+}
+.stat-pill strong { display: block; font-size: 26px; font-weight: 700; color: #e63946; }
+.stat-pill span { font-size: 12px; color: #888; font-weight: 500; }
+.who-visual { position: relative; }
+.visual-card {
+  background: linear-gradient(135deg, #000, #1f2937); border-radius: 24px;
+  padding: 50px 40px; color: white;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.2); position: relative; overflow: hidden;
+  animation: floatCard 5s ease-in-out infinite;
+}
+.visual-card::before {
+  content: ""; position: absolute; width: 200px; height: 200px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(230,57,70,0.25), transparent 70%); top: -60px; right: -60px;
+}
+.visual-card .vc-icon {
+  width: 64px; height: 64px; background: rgba(230,57,70,0.15); border-radius: 16px;
+  display: flex; align-items: center; justify-content: center; margin-bottom: 24px;
+}
+.visual-card .vc-icon i { font-size: 30px; color: #e63946; }
+.visual-card h3 { font-size: 24px; font-weight: 700; margin-bottom: 14px; }
+.visual-card p { color: #aaa; font-size: 15px; line-height: 1.7; }
+.vc-tag-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.vc-tag { padding: 6px 14px; background: rgba(230,57,70,0.12); border-radius: 30px; color: #ff6b7a; font-size: 12px; font-weight: 600; }
+
+/* ══════════════════════════════
+   OUR STORY
+══════════════════════════════ */
+.story-section {
+  padding: 120px 20px; background: linear-gradient(135deg, #000000, #1f2937);
+  color: white; text-align: center; position: relative; overflow: hidden;
+}
+.story-section::after {
+  content: ""; position: absolute; width: 400px; height: 400px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(230,57,70,0.15), transparent 70%); bottom: -120px; right: -80px;
+}
+.story-inner { max-width: 820px; margin: 0 auto; position: relative; z-index: 2; }
+.section-badge-dark {
+  display: inline-block; padding: 5px 16px; background: rgba(230,57,70,0.15);
+  border: 1px solid rgba(230,57,70,0.35); border-radius: 30px; color: #e63946;
+  font-size: 12px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 24px;
+}
+.story-section h2 { font-size: 40px; font-weight: 700; margin-bottom: 30px; color: white; }
+.story-section h2 span { color: #e63946; }
+.story-quote {
+  background: rgba(230,57,70,0.08); border-left: 4px solid #e63946;
+  border-radius: 0 14px 14px 0; padding: 28px 32px; margin: 0 auto 36px; text-align: left;
+}
+.story-quote p { font-size: 17px; color: #ccc; line-height: 1.8; margin: 0; }
+.story-body { font-size: 17px; color: #aaa; line-height: 1.8; text-align: left; }
+
+
+/* ════════════════════════════════════════════════════
+   MISSION & VALUES — DECORATIVE LIGHT THEME
+════════════════════════════════════════════════════ */
+.mission-section {
+  padding: 120px 20px;
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(ellipse 600px 400px at 0% 0%,   rgba(230,57,70,0.08)  0%, transparent 60%),
+    radial-gradient(ellipse 500px 500px at 100% 100%, rgba(99,102,241,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 400px 300px at 50% 50%,  rgba(230,57,70,0.04)  0%, transparent 70%),
+    #eff1f8;
+}
+
+/* dot-grid overlay */
+.mission-section::before {
+  content: ""; position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(230,57,70,0.14) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+  z-index: 0; pointer-events: none;
+}
+
+/* large ring top-right */
+.mission-section::after {
+  content: ""; position: absolute;
+  width: 520px; height: 520px; border-radius: 50%;
+  border: 60px solid rgba(230,57,70,0.055);
+  top: -160px; right: -160px;
+  z-index: 0; pointer-events: none;
+}
+
+.mission-deco-ring {
+  position: absolute; width: 380px; height: 380px; border-radius: 50%;
+  border: 50px solid rgba(99,102,241,0.06);
+  bottom: -120px; left: -120px;
+  z-index: 0; pointer-events: none;
+}
+.mission-blob-1 {
+  position: absolute; width: 220px; height: 220px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(230,57,70,0.10), transparent 70%);
+  top: 60px; right: 18%; z-index: 0;
+  animation: blobDrift1 8s ease-in-out infinite alternate; pointer-events: none;
+}
+.mission-blob-2 {
+  position: absolute; width: 180px; height: 180px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(99,102,241,0.09), transparent 70%);
+  bottom: 80px; left: 14%; z-index: 0;
+  animation: blobDrift2 10s ease-in-out infinite alternate; pointer-events: none;
+}
+@keyframes blobDrift1 { from{transform:translate(0,0);} to{transform:translate(-30px,20px);} }
+@keyframes blobDrift2 { from{transform:translate(0,0);} to{transform:translate(25px,-18px);} }
+
+.mission-section .section-head { text-align: center; margin-bottom: 70px; position: relative; z-index: 1; }
+.mission-section .section-head h2 { font-size: 40px; font-weight: 700; color: #222; }
+.mission-section .section-head h2 span { color: #e63946; }
+.mission-section .section-head p { color: #666; font-size: 17px; max-width: 600px; margin: 16px auto 0; }
+
+.mission-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 30px; max-width: 1100px; margin: 0 auto;
+  position: relative; z-index: 1;
+}
+
+/* glassmorphism card on light bg */
+.mission-card {
+  background: rgba(255,255,255,0.80);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.95);
+  border-radius: 24px; padding: 44px 38px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.07), 0 1px 0 rgba(255,255,255,0.8) inset;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  position: relative; overflow: hidden;
+}
+.mission-card::before {
+  content: ""; position: absolute; width: 150px; height: 150px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(230,57,70,0.09), transparent 70%); top: -40px; right: -40px;
+}
+.mission-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 24px 56px rgba(230,57,70,0.16), 0 1px 0 rgba(255,255,255,0.9) inset;
+}
+.mc-icon {
+  width: 58px; height: 58px; background: rgba(230,57,70,0.1); border-radius: 16px;
+  display: flex; align-items: center; justify-content: center; margin-bottom: 22px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.mc-icon i { font-size: 26px; color: #e63946; transition: color 0.3s ease; }
+.mission-card:hover .mc-icon { background: #e63946; box-shadow: 0 10px 25px rgba(230,57,70,0.4); }
+.mission-card:hover .mc-icon i { color: white; }
+.mission-card h3 { font-size: 22px; font-weight: 700; color: #222; margin-bottom: 14px; }
+.mission-card p { color: #666; font-size: 15px; line-height: 1.75; margin: 0; }
+
+.values-list { list-style: none; padding: 0; margin: 0; }
+.values-list li {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 14px 0; border-bottom: 1px solid rgba(230,57,70,0.08);
+  font-size: 15px; color: #444; line-height: 1.6;
+}
+.values-list li:last-child { border-bottom: none; }
+.val-icon {
+  width: 32px; height: 32px; background: rgba(230,57,70,0.1); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;
+}
+.val-icon i { font-size: 14px; color: #e63946; }
+.val-text strong { display: block; font-weight: 600; color: #222; margin-bottom: 2px; }
+
+
+/* ════════════════════════════════════════════════════
+   CTA STRIP — DECORATIVE LIGHT THEME
+════════════════════════════════════════════════════ */
+.about-cta {
+  padding: 110px 20px;
+  text-align: center; position: relative; overflow: hidden;
+  background:
+    radial-gradient(ellipse 700px 500px at 15% 50%,  rgba(230,57,70,0.09) 0%, transparent 60%),
+    radial-gradient(ellipse 600px 400px at 85% 30%,  rgba(251,146,60,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 400px 300px at 50% 100%, rgba(230,57,70,0.05) 0%, transparent 70%),
+    #f7f0ef;
+}
+
+/* diagonal stripe overlay */
+.about-cta::before {
+  content: ""; position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(
+    -55deg, transparent, transparent 22px,
+    rgba(230,57,70,0.025) 22px, rgba(230,57,70,0.025) 23px
+  );
+  z-index: 0; pointer-events: none;
+}
+
+/* large spinning ring */
+.about-cta::after {
+  content: ""; position: absolute;
+  width: 600px; height: 600px; border-radius: 50%;
+  border: 80px solid rgba(230,57,70,0.055);
+  bottom: -280px; right: -180px;
+  z-index: 0; pointer-events: none;
+  animation: slowSpin 30s linear infinite;
+}
+
+.cta-ring-2 {
+  position: absolute; width: 400px; height: 400px; border-radius: 50%;
+  border: 55px solid rgba(251,146,60,0.05);
+  top: -160px; left: -120px; z-index: 0; pointer-events: none;
+}
+.cta-blob-1 {
+  position: absolute; width: 260px; height: 260px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(230,57,70,0.10), transparent 65%);
+  top: -40px; left: 8%; z-index: 0;
+  animation: blobDrift1 9s ease-in-out infinite alternate; pointer-events: none;
+}
+.cta-blob-2 {
+  position: absolute; width: 200px; height: 200px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(251,146,60,0.09), transparent 65%);
+  bottom: -20px; right: 10%; z-index: 0;
+  animation: blobDrift2 11s ease-in-out infinite alternate; pointer-events: none;
+}
+
+.cta-dot { position: absolute; border-radius: 50%; z-index: 0; pointer-events: none; }
+.cta-dot-1 { width:10px; height:10px; background:rgba(230,57,70,0.28); top:18%;  left:12%;  animation: dotBounce 4s   ease-in-out infinite; }
+.cta-dot-2 { width:6px;  height:6px;  background:rgba(230,57,70,0.20); top:70%;  left:22%;  animation: dotBounce 5s   ease-in-out infinite 1s; }
+.cta-dot-3 { width:8px;  height:8px;  background:rgba(251,146,60,0.25);top:30%;  right:15%; animation: dotBounce 4.5s ease-in-out infinite 0.5s; }
+.cta-dot-4 { width:5px;  height:5px;  background:rgba(230,57,70,0.22); bottom:25%;right:25%; animation: dotBounce 6s   ease-in-out infinite 2s; }
+.cta-dot-5 { width:12px; height:12px; background:rgba(230,57,70,0.12); bottom:15%;left:40%;  animation: dotBounce 5.5s ease-in-out infinite 0.8s; }
+
+@keyframes dotBounce { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
+@keyframes slowSpin  { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+
+.cta-content-inner { position: relative; z-index: 2; }
+.about-cta h2 { font-size: 42px; font-weight: 700; color: #1a1a1a; margin-bottom: 16px; }
+.about-cta h2 span { color: #e63946; }
+.about-cta p { font-size: 17px; color: #555; max-width: 580px; margin: 0 auto 36px; line-height: 1.7; }
+
+.cta-btn-group { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+.about-cta .btn-primary-cta {
+  display: inline-block; padding: 15px 38px;
+  background: #e63946; color: white; border-radius: 40px;
+  font-weight: 600; text-decoration: none; font-size: 16px;
+  transition: all 0.3s ease; box-shadow: 0 8px 24px rgba(230,57,70,0.35);
+}
+.about-cta .btn-primary-cta:hover {
+  background: #c81d2e; transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(230,57,70,0.45);
+}
+.about-cta .btn-secondary-cta {
+  display: inline-block; padding: 15px 38px;
+  background: white; color: #e63946; border: 2px solid #e63946;
+  border-radius: 40px; font-weight: 600; text-decoration: none; font-size: 16px;
+  transition: all 0.3s ease;
+}
+.about-cta .btn-secondary-cta:hover {
+  background: rgba(230,57,70,0.05); transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(230,57,70,0.12);
+}
+
+
+/* ══════════════════════════════
+   HEADER WHITE STATE
+══════════════════════════════ */
+.header-white { background: #ffffff !important; box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important; }
+.header-white .nav-links a { color: #222; }
+.header-white .logo-main, .header-white .logo-sub { color: #e63946; }
+
+/* ══════════════════════════════
+   REVEAL ANIMATION
+══════════════════════════════ */
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ══════════════════════════════
+   SHARED FLOAT
+══════════════════════════════ */
+@keyframes floatCard { 0%{transform:translateY(0px);} 50%{transform:translateY(-10px);} 100%{transform:translateY(0px);} }
+
+/* ══════════════════════════════
+   MOBILE
+══════════════════════════════ */
+@media (max-width: 768px) {
+  .about-hero h1 { font-size: 30px; }
+  .about-hero p  { font-size: 15px; }
+  .who-grid      { grid-template-columns: 1fr; gap: 40px; }
+  .visual-card   { padding: 36px 28px; }
+  .mission-grid  { grid-template-columns: 1fr; gap: 24px; }
+  .about-cta h2  { font-size: 28px; }
+  .who-stats     { justify-content: center; }
+  .cta-btn-group { flex-direction: column; align-items: center; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header-bar" id="main-header">
+  <a href="index.html" class="logo-wrapper">
+    <img src="resources/images/dp_logo1.png" alt="DataPath Technologies Logo">
+    <div class="logo-text">
+      <div class="logo-main">DataPath</div>
+      <div class="logo-sub">Technologies</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</div>
+
+
+<!-- 1. PAGE HERO -->
+<section class="about-hero">
+  <div class="about-hero-inner reveal">
+    <div class="about-hero-tag">About Us</div>
+    <h1>The People Behind Your<br><span>Digital Growth</span></h1>
+    <p>We are DataPath Technologies — a passionate digital solutions company from Chennai, Tamil Nadu, building the tools that help businesses grow in the modern world.</p>
+  </div>
+</section>
+
+
+<!-- 2. WHO WE ARE -->
+<section class="who-section">
+  <div class="who-grid">
+    <div class="who-text reveal">
+      <div class="section-badge">Who We Are</div>
+      <h2>A Digital Studio Built for <span>Growing Businesses</span></h2>
+      <p>DataPath Technologies is a digital solutions company based in <strong>Chennai, Tamil Nadu</strong>, helping businesses build modern web and mobile products that work — beautifully and reliably.</p>
+      <p>We work with startups, small businesses, and growing companies across Tamil Nadu and India, turning ideas into powerful digital products — from websites and mobile apps to data dashboards and AI-powered tools.</p>
+      <div class="who-stats">
+        <div class="stat-pill"><strong>Chennai</strong><span>Tamil Nadu</span></div>
+        <div class="stat-pill"><strong>6+</strong><span>Services</span></div>
+        <div class="stat-pill"><strong>100%</strong><span>Dedicated</span></div>
+      </div>
+    </div>
+    <div class="who-visual reveal">
+      <div class="visual-card">
+        <div class="vc-icon"><i class="bi bi-building"></i></div>
+        <h3>DataPath Technologies</h3>
+        <p>Chennai, Tamil Nadu, India — delivering digital solutions that are modern, scalable, and built to perform for businesses of all sizes.</p>
+        <div class="vc-tag-row">
+          <span class="vc-tag">Web Development</span>
+          <span class="vc-tag">Mobile Apps</span>
+          <span class="vc-tag">Digital Marketing</span>
+          <span class="vc-tag">Data Analytics</span>
+          <span class="vc-tag">AI Solutions</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 3. OUR STORY -->
+<section class="story-section">
+  <div class="story-inner reveal">
+    <div class="section-badge-dark">Our Story</div>
+    <h2>Where It All <span>Began</span></h2>
+    <div class="story-quote">
+      <p>"We started DataPath Technologies with a simple belief — that every business, no matter how small, deserves access to powerful, professional digital tools."</p>
+    </div>
+    <div class="story-body">
+      <p>DataPath Technologies was founded in Chennai, Tamil Nadu, with a clear purpose: to bridge the gap between technology and local businesses. We saw that many startups and growing companies in our region struggled to find affordable, reliable digital partners who truly understood their needs.</p>
+      <br>
+      <p>So we built one. Today, we help businesses across Tamil Nadu and beyond build their digital presence — from the first landing page to full-scale mobile apps and data platforms — with the same care and commitment we'd want for ourselves.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- 4. MISSION & VALUES — DECORATIVE LIGHT -->
+<section class="mission-section">
+  <div class="mission-deco-ring"></div>
+  <div class="mission-blob-1"></div>
+  <div class="mission-blob-2"></div>
+
+  <div class="section-head reveal">
+    <h2>Our <span>Mission & Values</span></h2>
+    <p>The principles that guide every project we take on and every relationship we build.</p>
+  </div>
+
+  <div class="mission-grid">
+    <div class="mission-card reveal">
+      <div class="mc-icon"><i class="bi bi-bullseye"></i></div>
+      <h3>Our Mission</h3>
+      <p>To help small and growing businesses in Tamil Nadu and across India build powerful, professional digital products — affordably, reliably, and with genuine care for their growth.</p>
+      <p style="margin-top:14px;">We believe technology should be an enabler, not a barrier. Every business deserves a strong digital foundation — and we're here to build it.</p>
+    </div>
+
+    <div class="mission-card reveal">
+      <div class="mc-icon"><i class="bi bi-gem"></i></div>
+      <h3>Our Values</h3>
+      <ul class="values-list">
+        <li>
+          <div class="val-icon"><i class="bi bi-patch-check"></i></div>
+          <div class="val-text"><strong>Quality First</strong>We don't cut corners. Every line of code, every design decision is made with care and precision.</div>
+        </li>
+        <li>
+          <div class="val-icon"><i class="bi bi-shield-check"></i></div>
+          <div class="val-text"><strong>Reliability</strong>We deliver what we promise — on time, on budget, with no surprises along the way.</div>
+        </li>
+        <li>
+          <div class="val-icon"><i class="bi bi-people"></i></div>
+          <div class="val-text"><strong>Client Focus</strong>Your success is our success. We listen, understand, and build solutions that truly fit your needs.</div>
+        </li>
+        <li>
+          <div class="val-icon"><i class="bi bi-lightbulb"></i></div>
+          <div class="val-text"><strong>Continuous Growth</strong>We keep learning so your products always use modern, future-ready technology.</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- 5. CTA STRIP — DECORATIVE LIGHT -->
+<section class="about-cta">
+  <div class="cta-ring-2"></div>
+  <div class="cta-blob-1"></div>
+  <div class="cta-blob-2"></div>
+  <div class="cta-dot cta-dot-1"></div>
+  <div class="cta-dot cta-dot-2"></div>
+  <div class="cta-dot cta-dot-3"></div>
+  <div class="cta-dot cta-dot-4"></div>
+  <div class="cta-dot cta-dot-5"></div>
+
+  <div class="cta-content-inner reveal">
+    <h2>Ready to Build Something <span>Great?</span></h2>
+    <p>Whether you need a website, mobile app, or a complete digital strategy — we're here to help your business grow.</p>
+    <div class="cta-btn-group">
+      <a href="index.html#contact" class="btn-primary-cta" onclick="openContactForm(event)">Get In Touch</a>
+      <a href="index.html#services" class="btn-secondary-cta">View Services</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="footer-section">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-md-3">
+        <h3 class="footer-logo">DataPath Technologies</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Our Mission</a></li>
+        </ul>
+        <address style="font-style:normal; margin-top:12px; font-size:0.85rem; color:#aaa; line-height:1.8;">
+          Chennai, Tamil Nadu, India<br>
+          <a href="mailto:datapathtechnologies1@gmail.com" style="color:#aaa;">datapathtechnologies1@gmail.com</a>
+        </address>
+      </div>
+      <div class="col-md-3">
+        <h5>For Business</h5>
+        <ul class="footer-links">
+          <li><a href="index.html#services" onclick="openContactForm(event)">Website Development</a></li>
+          <li><a href="index.html#services" onclick="openContactForm(event)">Mobile App Development</a></li>
+          <li><a href="index.html#services" onclick="openContactForm(event)">Digital Marketing Solutions</a></li>
+          <li><a href="index.html#services" onclick="openContactForm(event)">Data Analytics Solutions</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 footer-support">
+        <h5>Support</h5>
+        <ul class="footer-links">
+          <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact.datapathlearn@gmail.com" target="_blank">Help Center</a></li>
+          <li><a href="index.html#contact" onclick="openContactForm(event)">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5>Social Links</h5>
+        <div class="social-icons">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=datapathtechnologies1@gmail.com" target="_blank" aria-label="Email"><i class="bi bi-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/datapath-technologies" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.instagram.com/datapath.learn" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.facebook.com/share/1DYRvbdQtK/" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="footer-divider">
+  <div class="footer-compact">© <span id="year"></span> DataPath Technologies. All rights reserved.</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const header = document.getElementById("main-header");
+  window.addEventListener("scroll", () => {
+    header.classList.toggle("header-white", window.scrollY > 60);
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add("visible"), 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+  function openContactForm(event) {
+    if (event) event.preventDefault();
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLSdgmT9VQbUi_7oTkIBiSKCHTQWGhToYsQEgZxO3bVCtkzhkrw/viewform?usp=publish-editor",
+      "_blank"
+    );
+  }
+</script>
+</body>
+</html>
