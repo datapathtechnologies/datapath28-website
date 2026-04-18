@@ -1,64 +1,93 @@
-<!-- ===== Transition Overlay ===== -->
+<!-- ===== Transition Overlay — Redesigned Cinematic Wipe ===== -->
 <div id="page-transition">
-    <div class="transition-content">
-        <img src="resources/images/dp_logo1.png"
-             alt="DataPath Logo">
-    </div>
+  <div class="pt-panel"></div>
+  <div class="pt-logo">
+    <img src="resources/images/dp_logo1.png" alt="DataPath Logo">
+    <div class="pt-logo-text">DataPath Technologies</div>
+    <div class="pt-bar"></div>
+  </div>
 </div>
 
 <style>
 /* ===== Transition Overlay ===== */
 #page-transition {
-    position: fixed;
-    inset: 0;
-    background: white;
-    z-index: 99999;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    opacity: 1;
-    transition: opacity 0.5s ease;
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-/* Hidden state */
-#page-transition.hide {
-    opacity: 0;
+/* Full-screen dark panel that wipes away */
+.pt-panel {
+  position: absolute;
+  inset: 0;
+  background: #000;
+  transform-origin: top;
+  transform: scaleY(1);
+  transition: transform 0.65s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-/* ===== Center Content ===== */
-.transition-content {
-    text-align: center;
-    animation: zoomFade 0.5s ease;
+/* Center branding shown during wipe */
+.pt-logo {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
-/* BIGGER LOGO */
-.transition-content img {
-    width: 500px;
-    height: 500px;
-    object-fit: contain;
-    margin-bottom: 25px;
+.pt-logo img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  animation: ptPulse 0.6s ease;
 }
 
-/* BIGGER BRAND TEXT */
-.transition-content h1 {
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 38px;
-    letter-spacing: 1.5px;
+.pt-logo-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  color: #e63946;
+  letter-spacing: 1px;
+  animation: ptPulse 0.6s ease 0.05s both;
 }
 
-/* Smooth zoom animation */
-@keyframes zoomFade {
-    from {
-        transform: scale(0.85);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
+.pt-bar {
+  width: 60px;
+  height: 3px;
+  background: #e63946;
+  border-radius: 2px;
+  animation: ptBarExpand 0.5s ease 0.15s both;
+  transform-origin: left;
+}
+
+/* Entry animations */
+@keyframes ptPulse {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes ptBarExpand {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* Hide state — panel wipes up, logo fades */
+#page-transition.hiding .pt-panel {
+  transform: scaleY(0);
+}
+#page-transition.hiding .pt-logo {
+  opacity: 0;
+}
+
+/* Fully gone */
+#page-transition.gone {
+  display: none;
 }
 </style>
