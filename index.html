@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>DataPath Technologies | Web, App & Data Solutions – Chennai, Tamil Nadu</title>
-<meta charset="UTF-8"> 
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="DataPath Technologies is a digital solutions company in Salem, Tamil Nadu offering custom web development, mobile app development, digital marketing, data analytics, and AI-powered tools for businesses.">
 <meta name="keywords" content="software company Salem Tamil Nadu, web development Salem, mobile app development Salem, digital marketing Salem TN, data analytics Tamil Nadu, AI solutions Salem, DataPath Technologies">
@@ -44,11 +44,52 @@
 </script>
 <link rel="icon" type="image/png" sizes="32x32" href="resources/images/dp_title_logo.png">
 <link rel="apple-touch-icon" href="resources/images/dp_title_logo.png">
+
+<!-- Bootstrap Icons — kept on CDN (icons, not render-critical) -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Google Fonts: non-blocking load so Brave Shields never freezes render -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link id="gfonts" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"></noscript>
+
 <link rel="stylesheet" href="resources/css/style.css">
 <style>
+/* ==============================================================
+   BRAVE / FONT-BLOCK SAFETY NET
+   Ensures all text is always visible regardless of whether
+   Google Fonts, Lottie, or Lenis load successfully.
+============================================================== */
+:root {
+  --font-stack: 'Poppins', -apple-system, BlinkMacSystemFont,
+                'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+}
+body {
+  font-family: var(--font-stack) !important;
+}
+
+/* Hero — guarantee subtitle paragraph is never invisible */
+.hero-content h1,
+.hero-content p,
+.hero-content .lead,
+.hero-content .display-3 {
+  font-family: var(--font-stack) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+.hero-content p,
+.hero-content .lead {
+  color: rgba(255,255,255,0.88) !important;
+}
+
+/* Every section heading / paragraph inherits the safe stack */
+h1,h2,h3,h4,h5,h6,p,a,span,li,label,input,textarea,select,button {
+  font-family: var(--font-stack);
+}
+
 /* ============================================================
    SCROLL REVEAL
 ============================================================ */
@@ -70,7 +111,7 @@
 .pt-panel { position:absolute; inset:0; background:#000; transform-origin:top; transform:scaleY(1); transition:transform .65s cubic-bezier(.77,0,.175,1); }
 .pt-logo  { position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; gap:14px; opacity:1; transition:opacity .3s ease; }
 .pt-logo img { width:90px; height:90px; object-fit:contain; animation:ptPulse .6s ease; }
-.pt-logo-text { font-family:'Poppins',sans-serif; font-weight:700; font-size:26px; color:#e63946; letter-spacing:1px; animation:ptPulse .6s ease .05s both; }
+.pt-logo-text { font-family:var(--font-stack); font-weight:700; font-size:26px; color:#e63946; letter-spacing:1px; animation:ptPulse .6s ease .05s both; }
 .pt-bar { width:60px; height:3px; background:#e63946; border-radius:2px; animation:ptBarExpand .5s ease .15s both; transform-origin:left; }
 @keyframes ptPulse    { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
 @keyframes ptBarExpand{ from{transform:scaleX(0)} to{transform:scaleX(1)} }
@@ -82,7 +123,7 @@
    FLOATING BUTTONS
 ============================================================ */
 .floating-contacts { position:fixed; bottom:30px; right:28px; display:flex; flex-direction:column; align-items:flex-end; gap:12px; z-index:9000; }
-.float-btn { display:flex; align-items:center; gap:10px; padding:12px 18px; border-radius:50px; text-decoration:none; font-family:'Poppins',sans-serif; font-size:14px; font-weight:600; cursor:pointer; border:none; transition:transform .25s ease,box-shadow .25s ease; box-shadow:0 6px 24px rgba(0,0,0,.22); white-space:nowrap; }
+.float-btn { display:flex; align-items:center; gap:10px; padding:12px 18px; border-radius:50px; text-decoration:none; font-family:var(--font-stack); font-size:14px; font-weight:600; cursor:pointer; border:none; transition:transform .25s ease,box-shadow .25s ease; box-shadow:0 6px 24px rgba(0,0,0,.22); white-space:nowrap; }
 .float-btn:hover { transform:translateY(-3px) scale(1.04); }
 .float-btn i { font-size:18px; }
 .float-btn-enquiry  { background:#e63946; color:#fff; box-shadow:0 6px 24px rgba(230,57,70,.45); }
@@ -97,35 +138,33 @@
 .formspree-modal-overlay.open { opacity:1; pointer-events:all; }
 .formspree-modal { background:#fff; border-radius:20px; padding:40px 36px; width:100%; max-width:480px; position:relative; transform:translateY(30px) scale(.97); transition:transform .35s cubic-bezier(.22,1,.36,1); box-shadow:0 30px 80px rgba(0,0,0,.3); max-height:90vh; overflow-y:auto; }
 .formspree-modal-overlay.open .formspree-modal { transform:translateY(0) scale(1); }
-.formspree-modal h3 { font-family:'Poppins',sans-serif; font-size:22px; font-weight:700; color:#111; margin-bottom:6px; }
+.formspree-modal h3 { font-family:var(--font-stack); font-size:22px; font-weight:700; color:#111; margin-bottom:6px; }
 .formspree-modal p.fm-sub { font-size:14px; color:#888; margin-bottom:24px; }
 .fm-close { position:absolute; top:16px; right:20px; background:none; border:none; font-size:22px; color:#aaa; cursor:pointer; line-height:1; transition:color .2s; }
 .fm-close:hover { color:#e63946; }
 .fm-group { margin-bottom:16px; }
 .fm-group label { display:block; font-size:13px; font-weight:600; color:#444; margin-bottom:6px; }
-.fm-group input, .fm-group textarea, .fm-group select { width:100%; padding:11px 14px; border:1.5px solid #e0e0e0; border-radius:10px; font-family:'Poppins',sans-serif; font-size:14px; color:#333; outline:none; transition:border-color .2s; background:#fafafa; }
+.fm-group input, .fm-group textarea, .fm-group select { width:100%; padding:11px 14px; border:1.5px solid #e0e0e0; border-radius:10px; font-family:var(--font-stack); font-size:14px; color:#333; outline:none; transition:border-color .2s; background:#fafafa; }
 .fm-group input:focus, .fm-group textarea:focus, .fm-group select:focus { border-color:#e63946; background:#fff; }
-/* Validation states */
 .fm-group input.fm-error, .fm-group textarea.fm-error, .fm-group select.fm-error { border-color:#e63946 !important; background:#fff5f5; }
 .fm-group input.fm-valid, .fm-group textarea.fm-valid, .fm-group select.fm-valid { border-color:#25D366 !important; }
 .fm-field-error { font-size:12px; color:#e63946; margin-top:5px; display:none; font-weight:500; }
 .fm-field-error.show { display:block; }
 .fm-group textarea { resize:vertical; min-height:100px; }
-.fm-submit { width:100%; padding:13px; background:#e63946; color:#fff; border:none; border-radius:12px; font-family:'Poppins',sans-serif; font-size:15px; font-weight:600; cursor:pointer; margin-top:4px; transition:background .2s,transform .2s; }
+.fm-submit { width:100%; padding:13px; background:#e63946; color:#fff; border:none; border-radius:12px; font-family:var(--font-stack); font-size:15px; font-weight:600; cursor:pointer; margin-top:4px; transition:background .2s,transform .2s; }
 .fm-submit:hover { background:#c81d2e; transform:translateY(-2px); }
 .fm-submit:disabled { background:#aaa; cursor:not-allowed; transform:none; }
 .fm-success { text-align:center; padding:20px 0; display:none; }
 .fm-success i { font-size:48px; color:#25D366; display:block; margin-bottom:14px; }
 .fm-success h4 { font-size:20px; font-weight:700; color:#111; margin-bottom:8px; }
 .fm-success p { color:#777; font-size:14px; }
-/* Already-submitted state */
 .fm-already { text-align:center; padding:20px 0; display:none; }
 .fm-already i { font-size:48px; color:#e63946; display:block; margin-bottom:14px; }
 .fm-already h4 { font-size:20px; font-weight:700; color:#111; margin-bottom:8px; }
 .fm-already p { color:#777; font-size:14px; }
 
 /* Toast */
-.dp-toast { position:fixed; bottom:100px; right:28px; background:#111; color:#fff; padding:14px 20px; border-radius:12px; font-family:'Poppins',sans-serif; font-size:14px; font-weight:600; z-index:99999; display:flex; align-items:center; gap:10px; box-shadow:0 8px 30px rgba(0,0,0,.3); opacity:0; transform:translateY(10px); transition:opacity .4s ease,transform .4s ease; pointer-events:none; }
+.dp-toast { position:fixed; bottom:100px; right:28px; background:#111; color:#fff; padding:14px 20px; border-radius:12px; font-family:var(--font-stack); font-size:14px; font-weight:600; z-index:99999; display:flex; align-items:center; gap:10px; box-shadow:0 8px 30px rgba(0,0,0,.3); opacity:0; transform:translateY(10px); transition:opacity .4s ease,transform .4s ease; pointer-events:none; }
 .dp-toast.show { opacity:1; transform:translateY(0); }
 .dp-toast i { font-size:18px; color:#25D366; }
 </style>
@@ -162,14 +201,11 @@
     <button class="fm-close" onclick="closeEnquiryModal()" aria-label="Close">&times;</button>
     <h3>Get In Touch</h3>
     <p class="fm-sub">We'll get back to you within 24 hours.</p>
-
-    <!-- Main form -->
     <form id="enquiryForm" action="https://formsubmit.co/datapathtechnologies1@gmail.com" method="POST" novalidate>
       <input type="hidden" name="_subject" value="New Enquiry – DataPath Technologies">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_next" id="formNextUrl" value="https://www.datapathtech.in/">
-
       <div class="fm-group">
         <label>Your Name <span style="color:#e63946">*</span></label>
         <input type="text" id="fm-name" name="name" placeholder="John Doe" autocomplete="name">
@@ -204,15 +240,11 @@
       </div>
       <button type="button" class="fm-submit" onclick="handleEnquirySubmit()">Send Enquiry →</button>
     </form>
-
-    <!-- Success state -->
     <div class="fm-success" id="enquirySuccess">
       <i class="bi bi-check-circle-fill"></i>
       <h4>Message Sent!</h4>
       <p>Thank you for reaching out. We'll get back to you shortly.</p>
     </div>
-
-    <!-- Already submitted state -->
     <div class="fm-already" id="enquiryAlready">
       <i class="bi bi-envelope-x-fill"></i>
       <h4>Already Submitted</h4>
@@ -359,10 +391,11 @@
   <div class="footer-compact">© <span id="year"></span> DataPath Technologies. All rights reserved.</div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
-<script src="https://unpkg.com/@studio-freight/lenis@1.0.35/dist/lenis.min.js"></script>
-<script>
+<!-- Scripts loaded with defer so a CDN block never halts page render -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+<script defer src="https://unpkg.com/@studio-freight/lenis@1.0.35/dist/lenis.min.js"></script>
 
+<script>
 /* ============================================================
    STORAGE KEY
 ============================================================ */
@@ -384,23 +417,18 @@ function isEmailAlreadySubmitted(email) {
 }
 
 /* ============================================================
-   EMAIL VALIDATION (strict regex beyond HTML5)
+   EMAIL / PHONE VALIDATION
 ============================================================ */
 function isValidEmail(email) {
-  // RFC 5322 simplified — catches missing TLD, double dots, spaces, etc.
   const re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}$/;
   if (!re.test(email)) return false;
-  // No consecutive dots
   if (email.includes("..")) return false;
-  // Local part max 64 chars
   const [local] = email.split("@");
   if (local.length > 64) return false;
   return true;
 }
-
 function isValidPhone(phone) {
-  if (!phone || phone.trim() === "") return true; // optional field
-  // Allow +, spaces, dashes, parens, digits — min 7 digits
+  if (!phone || phone.trim() === "") return true;
   const digits = phone.replace(/\D/g, "");
   return digits.length >= 7 && digits.length <= 15;
 }
@@ -421,7 +449,6 @@ function setFieldError(inputId, errorId, show) {
     err.classList.remove("show");
   }
 }
-
 function clearFieldState(inputId, errorId) {
   const input = document.getElementById(inputId);
   const err   = document.getElementById(errorId);
@@ -429,7 +456,6 @@ function clearFieldState(inputId, errorId) {
   err.classList.remove("show");
 }
 
-/* Live validation on blur */
 function initLiveValidation() {
   document.getElementById("fm-name").addEventListener("blur", function() {
     setFieldError("fm-name", "err-name", !this.value.trim());
@@ -471,11 +497,9 @@ function handleEnquirySubmit() {
   const service = document.getElementById("fm-service").value;
   let hasError  = false;
 
-  // Name
   if (!name) { setFieldError("fm-name", "err-name", true); hasError = true; }
   else        { setFieldError("fm-name", "err-name", false); }
 
-  // Email — validate format first, then duplicate check
   if (!email) {
     document.getElementById("err-email").textContent = "Please enter your email address.";
     setFieldError("fm-email", "err-email", true); hasError = true;
@@ -483,7 +507,6 @@ function handleEnquirySubmit() {
     document.getElementById("err-email").textContent = "Please enter a valid email (e.g. name@domain.com).";
     setFieldError("fm-email", "err-email", true); hasError = true;
   } else if (isEmailAlreadySubmitted(email)) {
-    // Show the already-submitted panel instead of error
     document.getElementById("enquiryForm").style.display = "none";
     document.getElementById("enquiryAlready").style.display = "block";
     document.getElementById("alreadyMsg").textContent =
@@ -493,32 +516,25 @@ function handleEnquirySubmit() {
     setFieldError("fm-email", "err-email", false);
   }
 
-  // Phone (optional but validate format if filled)
   if (phone && !isValidPhone(phone)) {
     setFieldError("fm-phone", "err-phone", true); hasError = true;
   } else {
     clearFieldState("fm-phone", "err-phone");
   }
 
-  // Service
   if (!service) { setFieldError("fm-service", "err-service", true); hasError = true; }
   else          { setFieldError("fm-service", "err-service", false); }
 
   if (hasError) return;
 
-  // Set _next to current page URL so FormSubmit redirects back here
   const currentUrl = window.location.href.split("?")[0].split("#")[0];
   document.getElementById("formNextUrl").value = currentUrl + "?sent=1";
-
-  // Save email to localStorage BEFORE submit (page will navigate away)
   saveSubmittedEmail(email);
-
-  // Native form submit — FormSubmit handles the rest
   document.getElementById("enquiryForm").submit();
 }
 
 /* ============================================================
-   SUCCESS TOAST (on return from FormSubmit with ?sent=1)
+   SUCCESS TOAST
 ============================================================ */
 function showToast(msg, isError) {
   const toast = document.getElementById("dpToast");
@@ -538,10 +554,9 @@ window.addEventListener("DOMContentLoaded", function () {
 });
 
 /* ============================================================
-   MODAL OPEN/CLOSE
+   MODAL OPEN / CLOSE
 ============================================================ */
 function openEnquiryModal() {
-  // Reset form to clean state each open
   const form    = document.getElementById("enquiryForm");
   const success = document.getElementById("enquirySuccess");
   const already = document.getElementById("enquiryAlready");
@@ -554,14 +569,10 @@ function openEnquiryModal() {
     if (el) { el.classList.remove("fm-error","fm-valid"); }
   });
   document.querySelectorAll(".fm-field-error").forEach(e => e.classList.remove("show"));
-
   document.getElementById("enquiryModalOverlay").classList.add("open");
   document.body.style.overflow = "hidden";
-
-  // Init live validation after open
   initLiveValidation();
 }
-
 function closeEnquiryModal() {
   document.getElementById("enquiryModalOverlay").classList.remove("open");
   document.body.style.overflow = "";
@@ -639,13 +650,15 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /* ============================================================
-   LOTTIE
+   LOTTIE — safe: only runs if script loaded successfully
 ============================================================ */
-document.addEventListener("DOMContentLoaded", function () {
-  const s = document.getElementById("services-lottie");
-  if (s) lottie.loadAnimation({container:s, renderer:"svg", loop:true, autoplay:true, path:"resources/animations/services.json"});
-  const c = document.getElementById("cta-lottie");
-  if (c) lottie.loadAnimation({container:c, renderer:"svg", loop:true, autoplay:true, path:"resources/animations/contact.json"});
+window.addEventListener("load", function () {
+  if (typeof lottie !== "undefined") {
+    const s = document.getElementById("services-lottie");
+    if (s) lottie.loadAnimation({container:s, renderer:"svg", loop:true, autoplay:true, path:"resources/animations/services.json"});
+    const c = document.getElementById("cta-lottie");
+    if (c) lottie.loadAnimation({container:c, renderer:"svg", loop:true, autoplay:true, path:"resources/animations/contact.json"});
+  }
 });
 </script>
 </body>
